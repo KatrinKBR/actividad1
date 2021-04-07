@@ -39,24 +39,24 @@ a:hover {
     position: fixed;
 }
 
+.box {
+    height: 25%;
+}
+
 .p1 {
     background-color: rgb(64, 200, 224);
-    height: 25%;
 }
 
 .p2 {
     background-color: rgba(241, 228, 44, 0.938);
-    height: 25%;
 }
 
 .p3 {
     background-color: rgb(255, 136, 0);
-    height: 25%;
 }
 
 .p4 {
     background-color: rgb(250, 48, 21);
-    height: 25%;
 }
 
 .title {
