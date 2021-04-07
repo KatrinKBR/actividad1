@@ -1,7 +1,73 @@
 body {
     font-family: sans-serif;
+    color:whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
 }
 
 .menu {
     background-color: rgb(37, 37, 37);
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: fixed;
+}
+
+.menu-elements {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+a:link {
+    color:whitesmoke;
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgba(245, 245, 245, 0.849);
+}
+
+.content {
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+    position: fixed;
+}
+
+.p1 {
+    background-color: rgb(64, 200, 224);
+    height: 25%;
+}
+
+.p2 {
+    background-color: rgba(241, 228, 44, 0.938);
+    height: 25%;
+}
+
+.p3 {
+    background-color: rgb(255, 136, 0);
+    height: 25%;
+}
+
+.p4 {
+    background-color: rgb(250, 48, 21);
+    height: 25%;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.text {
+    text-align: justify;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding-top: 40px;
 }
