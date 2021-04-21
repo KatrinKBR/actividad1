@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title> Ayuda a un peludo </title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
   </head>
   
   <body>
-    <div style="text-align: center;">
-      <h1>ONG - AYUDA A UN PELUDO</h1>
+    <!-- Menu bar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #acecc2;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"></div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Adopta
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Perros</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Gatos</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contáctanos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Fin Menu bar -->
 
-      <div style="padding-left: 600px; padding-right: 600px;">
-        <p style="text-align: justify; text-justify: inter-word;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+    <!-- Texto con informacion -->
+    <div class="container-fluid">
+      <h1 class="text-center">ONG - AYUDA A UN PELUDO</h1>
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div class="col-lg-3"></div>
       </div>
 
-      <h2>Nuestros integrantes:</h2>
+      <h2 class="text-center">Nuestros integrantes:</h2>
 
       <ul style="display: table; margin: 0 auto; text-align: left;">
         <li >Persona 1 - cargo 1</li>
@@ -25,17 +66,85 @@
         <li>Persona n - cargo n</li>
       </ul>
 
-      <h2>Nuestras secciones de ayuda:</h2>
+      <h2 class="text-center">Nuestras secciones de ayuda:</h2>
 
       <table style="margin-left:auto;margin-right:auto;">
         <tr>
-          <td><img src="img\gato.jpg"></img></td>
+          <td><img src="img/gato.jpg"></img></td>
           <td><a href="gatos.html">Gatos</a></td>
         </tr>
         <tr>
-          <td><img src="img\perro.jpg"></img></td>
+          <td><img src="img/perro.jpg"></img></td>
           <td><a href="perros.html">Perros</a></td>
         </tr>
       </table>
+    </div>
+
+    <!-- Fin de texto con informacion -->
+
+    <!-- Pie de pagina -->
+    <footer class="text-center text-lg-start" style="background-color: #acecc2;">
+      <div class="container p-3" id="container-footer">
+
+        <div class="row">
+          <!-- Una columna con info -->
+          <div class="col-lg-6">
+            <h5 class="text-uppercase">Ayuda a un peludo</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+              voluptatem veniam, est atque cumque eum delectus sint!
+            </p>
+          </div>
+
+          <!-- Columna1 con links de interes -->
+          <div class="col-lg-3">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-dark">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna2 con links de interes -->
+          <div class="col-lg-3">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-dark">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 4</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parte final del footer -->
+      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+        Fundación Ayuda a un peludo© | Todos los derechos reservados.
+      </div>
+    </footer>
+    <!-- Fin Pie de pagina -->
+
+      <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
