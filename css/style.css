@@ -1,0 +1,35 @@
+.carousel .carousel-item {
+    height: 500px;
+  }
+  
+.carousel-item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+
+.fm-bg {
+    background-color: #acecc2;
+}
+
+.center {
+    display: block;
+    margin: auto;
+}
+
+.secciones {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.secciones-h {
+    margin-bottom: 40px;
+}
+
+.hide-under{
+    text-decoration:none;
+}
+
+

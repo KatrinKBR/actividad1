@@ -1,35 +1,138 @@
 <!DOCTYPE html>
 <html>
-<head> <title> Ayuda a un Peludo</title> </head>
+    <head> 
+        <meta charset="utf-8">
+        <title> Ayuda a un peludo </title>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+    </head>
 
-<body>
-    <a href="gatos.html"><p style="text-align:right;">Inicio > Volver a Gatos</p></a>
+    <body class="d-flex flex-column min-vh-100">
+        <!-- Barra de Menu -->
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top fm-bg">
+            <!-- Inicio Contenedor -->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="logo" src="img/logo.png" width="45" height="45"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Inicio de lista de elementos -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Inicio primer elemento -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <!-- Fin primer elemento -->
+        
+                <!-- Inicio segundo elemento -->
+                <li class="nav-item">
+                    <a class="nav-link" href="nosotros.html">Nosotros</a>
+                </li>
+                <!-- Fin segundo elemento -->
+        
+                <!-- Inicio tercer elemento --> 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Adopta
+                    </a>
+                    <!-- Inicio submenu tercer elemento --> 
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="perros.html">Perros</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
+                    </ul>
+                    <!-- Fin submenu tercer elemento -->
+                </li>
+                <!-- Fin tercer elemento --> 
+        
+                <!-- Inicio cuarto elemento --> 
+                <li class="nav-item">
+                    <a class="nav-link" href="ayudanos.html">Ayúdanos</a>
+                </li>
+                <!-- Fin cuarto elemento --> 
+        
+                <!-- Inicio quinto elemento --> 
+                <li class="nav-item">
+                    <a class="nav-link" href="contactanos.html">Contáctanos</a>
+                </li>
+                <!-- Fin quinto elemento --> 
+                </ul>
+                </div>
+                <!-- Fin de lista de elementos -->
+            </div>
+            <!-- Fin Contenedor -->
+        </nav>
+        <!-- Fin Barra de Menu -->
 
-    <table style="margin-left:auto;margin-right:auto; padding-top: 300px; width: 30%">
-        <td>
+        <!-- Inicio informacion -->
+        <div>
             <img src="img\ginger.jpg"></img>
-        </td>
+            Nombre: Ginger
+            Edad: 2 años
+            Sexo: Hembra
+            Esterilizado: Sí
+            N° Chip: 233434343434
+        </div>
+        <!-- Fin informacion -->
 
-        <td>
-            <table >
-                <tr>
-                    <td>Nombre: Ginger</td>
-                </tr>
-                <tr>
-                    <td>Edad: 2 años</td>
-                </tr>
-                <tr>
-                    <td>Sexo: Hembra</td>
-                </tr>
-                <tr>
-                    <td>Esterilizado: Sí</td>
-                </tr>
-                <tr>
-                    <td>N° Chip: 233434343434</td>
-                </tr>
-            </table>
-        </td>
-    </table>  
-</body>
-
+        <!-- Pie de pagina -->
+        <footer class="text-center text-lg-start fm-bg mt-auto">
+            <div class="container p-2">
+              <div class="row">
+                <!-- Columna con links a RRSS -->
+                <div class="col-lg-6">
+                  <h5 class="text-uppercase">Ayuda a un peludo</h5>
+                      <a href="#" class="hide-under p-3">
+                        <img src="img/instagram.png" width="30" height="30" />
+                      </a>
+                    
+                      <a href="#" class="hide-under p-3">
+                        <img src="img/twitter.png" width="30" height="30" />
+                      </a>
+                    
+                      <a href="#" class="hide-under p-3">
+                        <img src="img/facebook.png" width="30" height="30"/>
+                      </a>
+                </div>
+      
+                <!-- Columna1 con links de interes -->
+                <div class="col-lg-3">
+                  <h5 class="text-uppercase">Links</h5>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!" class="text-dark">Link 1</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-dark">Link 2</a>
+                    </li>
+                  </ul>
+                </div>
+      
+                <!-- Columna2 con links de interes -->
+                <div class="col-lg-3">
+                  <h5 class="text-uppercase">Links</h5>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!" class="text-dark">Link 1</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-dark">Link 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Parte final del footer -->
+            <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+              Fundación Ayuda a un peludo© | Todos los derechos reservados.
+            </div>
+        </footer>
+        <!-- Fin Pie de pagina -->
+      
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

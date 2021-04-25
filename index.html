@@ -1,61 +1,211 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title> Ayuda a un peludo </title>
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
   </head>
 
-<<<<<<< HEAD
-      <ul style="display: table; margin: 0 auto; text-align: left;">
-        <li >Persona 1 - cargo 1</li>
-        <li>Persona 2 - cargo 2</li>
-        <li>Persona 3 - cargo 3</li>
-        <li>Persona n - cargo n</li>
-      </ul>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Barra de Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top fm-bg">
+      <!-- Inicio Contenedor -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img alt="logo" src="img/logo.png" width="45" height="45"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <h2>Nuestras secciones de ayuda:</h2>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Inicio de lista de elementos -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Inicio primer elemento -->
+          <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <!-- Fin primer elemento -->
 
-      <table style="margin-left:auto;margin-right:auto;">
-        <tr>
-          <td><img src="img\gato.jpg"></img></td>
-          <td><a href="gatos.html">Gatos</a></td>
-        </tr>
-        <tr>
-          <td><img src="img\perro.jpg"></img></td>
-          <td><a href="perros.html">Perros</a></td>
-        </tr>
-      </table>
+          <!-- Inicio segundo elemento -->
+          <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <!-- Fin segundo elemento -->
+
+          <!-- Inicio tercer elemento --> 
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Adopta
+              </a>
+              <!-- Inicio submenu tercer elemento --> 
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="perros.html">Perros</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
+              </ul>
+              <!-- Fin submenu tercer elemento -->
+          </li>
+          <!-- Fin tercer elemento --> 
+
+          <!-- Inicio cuarto elemento --> 
+          <li class="nav-item">
+              <a class="nav-link" href="ayudanos.html">Ayúdanos</a>
+          </li>
+          <!-- Fin cuarto elemento --> 
+
+          <!-- Inicio quinto elemento --> 
+          <li class="nav-item">
+              <a class="nav-link" href="contactanos.html">Contáctanos</a>
+          </li>
+          <!-- Fin quinto elemento --> 
+          </ul>
+        </div>
+        <!-- Fin de lista de elementos -->
+      </div>
+      <!-- Fin Contenedor -->
+    </nav>
+    <!-- Fin Barra de Menu -->
+
+    <!-- Inicio Carrusel -->
+    <div id="carruselImg" class="carousel slide" data-bs-ride="carousel">
+      <!-- Inicio Indicadores -->
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carruselImg" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carruselImg" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carruselImg" data-bs-slide-to="2"></li>
+      </ol>
+      <!-- Fin Indicadores -->
+
+      <!-- Inicio diapositivas -->
+      <div class="carousel-inner">
+        <!-- Inicio diapositiva1 -->
+        <div class="carousel-item active">
+            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" class="d-block w-100" alt="Primera">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Texto1</h5>
+              <p>Texto1 Texto1 Texto1</p>
+            </div>
+        </div>
+        <!-- Fin diapositiva1 -->
+
+        <!-- Inicio diapositiva2 -->
+        <div class="carousel-item">
+            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" class="d-block w-100" alt="Segunda">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Texto2</h5>
+              <p>Texto2 Texto2 Texto2</p>
+            </div>
+        </div>
+        <!-- Fin diapositiva2 -->
+
+        <!-- Inicio diapositiva3 -->
+        <div class="carousel-item">
+            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" class="d-block w-100" alt="Tercera">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Texto3</h5>
+              <p>Texto3 Texto3 Texto3</p>
+            </div>
+        </div>
+        <!-- Fin diapositiva3 -->
+      </div>
+      <!-- Fin diapositivas -->
+
+      <!-- Inicio controladores -->
+      <a class="carousel-control-prev" href="#carruselImg" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carruselImg" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+      <!-- Fin controladores -->
     </div>
-=======
-  <body>
-    <p>Inicio</p>
-    <p>Nosotros</p>
-    <p>Perros</p>
-    <p>Gatos</p>
-    <p>Contactos</p>
-    
-    <h1>Lorem Ipsum dolor</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper leo nunc, nec fringilla libero malesuada quis. Vestibulum enim magna, 
-      dictum vel euismod ac, semper ut nunc. Duis orci lorem, tincidunt sit amet arcu vel, rutrum sagittis elit. Aenean viverra odio non ipsum scelerisque, 
-      non congue nisi cursus. Sed magna nisi, iaculis at turpis a, porttitor luctus turpis. Etiam vel ex hendrerit, consequat tortor ut, dictum nulla. 
-      Nulla bibendum sapien nec eros accumsan rutrum. Cras nec urna ac neque congue hendrerit. Aenean egestas imperdiet molestie. Morbi sodales elit ut turpis iaculis imperdiet. 
-      Aliquam faucibus lorem ac fermentum venenatis. Vestibulum in efficitur felis. Nulla tempus, risus nec maximus congue, sem erat sollicitudin nunc, 
-      lobortis posuere diam nulla vel massa. Curabitur id eros quam. Pellentesque vestibulum turpis vitae mi semper varius.</p>
-    
-    <h1>Fusce eget sem imperdiet</h1>
-    <p>maximus orci et, ultricies odio. Curabitur tortor sem, luctus vitae semper vitae, cursus ut ligula. Suspendisse potenti. Nullam finibus ligula eget risus faucibus tincidunt. 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula purus mi, id dictum ipsum congue tincidunt. Ut et turpis arcu.</p>
-    
-    <h1>Vivamus leo est</h1>
-    <p>posuere quis quam nec, mollis pulvinar tortor. Phasellus rhoncus ante a odio aliquam euismod. Nam a purus sapien. Duis vestibulum est non risus varius, a sollicitudin ante dapibus. 
-      Donec ex nulla, feugiat quis odio eu, vulputate lacinia lacus. Sed in lectus arcu. Etiam dapibus ipsum diam, eget eleifend lacus semper id. Nam pharetra faucibus dolor, at commodo 
-      nibh lobortis ac. Aliquam arcu nisl, mattis et accumsan in, maximus quis est. Pellentesque sed mattis dui, ut finibus odio. Aliquam at aliquet lacus, ac efficitur neque. 
-      Aliquam augue libero, finibus vel malesuada id, ultrices quis felis. Cras quis ipsum malesuada, fringilla purus in, commodo massa.</p>
-    
-    <h1>Suspendisse leo nibh</h1>
-    <p>lacinia ac tortor et, eleifend dictum nibh. In hac habitasse platea dictumst. Aliquam ac velit eget dui pretium posuere. Pellentesque habitant morbi tristique senectus et netus et 
-      malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec urna nisi, imperdiet non facilisis id, condimentum a enim. Maecenas in sem nibh. 
-      Sed non nulla vitae mi commodo cursus at a odio. Ut euismod posuere mauris, ut commodo diam sodales sed.</p>
->>>>>>> feature
-  </body>
-</html>
+    <!-- Fin Carrusel -->
+
+    <!-- Enlaces a nuestras secciones -->
+    <div class="container-fluid secciones">
+      <h2 class="text-center secciones-h">Nuestras secciones</h2>
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="center" src="img/perro.jpg">
+          <a href="#"><h5 class="text-center p-2">Adopta</h5></a>
+        </div>
+        <div class="col-lg-4">
+          <img class="center" src="img/perro.jpg">
+          <a href="contactanos.html">
+            <h5 class="text-center p-2">Contáctanos</h5>
+          </a>
+        </div>  
+        <div class="col-lg-4">
+          <img class="center" src="img/perro.jpg">
+          <a href="ayudanos.html">
+            <h5 class="text-center p-2">Ayúdanos</h5>
+          </a>
+        </div>    
+      </div>
+    </div>
+    <!-- Fin de enlaces a nuestras secciones-->
+
+    <!-- Pie de pagina -->
+    <footer class="text-center text-lg-start fm-bg mt-auto">
+      <div class="container p-2">
+        <div class="row">
+          <!-- Columna con links a RRSS -->
+          <div class="col-lg-6">
+            <h5 class="text-uppercase">Ayuda a un peludo</h5>
+                <a href="#" class="hide-under p-3">
+                  <img src="img/instagram.png" width="30" height="30" />
+                </a>
+              
+                <a href="#" class="hide-under p-3">
+                  <img src="img/twitter.png" width="30" height="30" />
+                </a>
+              
+                <a href="#" class="hide-under p-3">
+                  <img src="img/facebook.png" width="30" height="30"/>
+                </a>
+          </div>
+
+          <!-- Columna1 con links de interes -->
+          <div class="col-lg-3">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-dark">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 2</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna2 con links de interes -->
+          <div class="col-lg-3">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-dark">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-dark">Link 2</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Parte final del footer -->
+      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+        Fundación Ayuda a un peludo© | Todos los derechos reservados.
+      </div>
+    </footer>
+    <!-- Fin Pie de pagina -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>      
+</html>      
+
+
+>>>>>>> katrin-branch
