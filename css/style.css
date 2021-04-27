@@ -32,18 +32,3 @@
     text-decoration:none;
 }
 
-.container2{
-    background-color: white;
-    overflow:hidden;
-    padding: 0em;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.item{
-    margin:1em;
-    padding:100px;
-    color:white;
-    float:left;
-}
-
