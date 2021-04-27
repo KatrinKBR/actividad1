@@ -32,26 +32,15 @@
     text-decoration:none;
 }
 
-.gatos-adop{
+.titulo{
     color:black;
     text-shadow: 1px 1px #585858;
     text-align:center;
-}
-
-.perros-adop{
-    color:black;
-    text-shadow: 1px 1px #585858;
-    text-align:center;
-}
-
-.tituleichon{
-    color:black;
-    text-shadow: 1px 1px #585858;
-    text-align:center;
+    margin-top: 40px;
 }
 
 a:link{
-    color: blue;
+    color:rgb(65, 206, 147);
     text-decoration: none;
 }
 
@@ -64,3 +53,12 @@ a:hover{
     text-decoration: underline;
 }
 
+ul{
+    list-style: none;
+}
+
+.texto-alineado{
+   margin-left: 20%;
+   margin-right: 20%;
+   text-align: justify;
+}
