@@ -32,3 +32,37 @@
     text-decoration:none;
 }
 
+.titulo{
+    color:black;
+    text-shadow: 1px 1px #585858;
+    text-align:center;
+    margin-top: 40px;
+}
+
+a:link{
+    color:rgb(65, 206, 147);
+    text-decoration: none;
+}
+
+a:visited{
+    color:rgb(65, 206, 147);
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+ul{
+    list-style: none;
+}
+
+.texto-alineado{
+   margin-left: 20%;
+   margin-right: 20%;
+   text-align: justify;
+}
+
+body {
+    font-family: Verdana, Arial, Tahoma, Serif;
+}
