@@ -62,3 +62,7 @@ ul{
    margin-right: 20%;
    text-align: justify;
 }
+
+body {
+    font-family: Verdana, Arial, Tahoma, Serif;
+}
