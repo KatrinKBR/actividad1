@@ -1,6 +1,10 @@
+body {
+    font-family: Verdana, Arial, Tahoma, Serif;
+}
+
 .carousel .carousel-item {
     height: 500px;
-  }
+}
   
 .carousel-item img {
     position: absolute;
@@ -37,6 +41,14 @@
     text-shadow: 1px 1px #585858;
     text-align:center;
     margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.sub-titulo{
+    color:black;
+    text-shadow: 1px 1px #585858;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 a:link{
@@ -53,16 +65,14 @@ a:hover{
     text-decoration: underline;
 }
 
-ul{
-    list-style: none;
-}
-
 .texto-alineado{
-   margin-left: 20%;
-   margin-right: 20%;
    text-align: justify;
 }
 
-body {
-    font-family: Verdana, Arial, Tahoma, Serif;
+.ficha {
+    margin-top: 15%;
+}
+
+.flotar-d {
+    float:right;
 }
