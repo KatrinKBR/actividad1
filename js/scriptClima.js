@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('#infoClima').hide();
     geolocalizacion();
+
 });
 
 function geolocalizacion() {
@@ -15,12 +16,11 @@ function geolocalizacion() {
             "lon" : position.coords.longitude
         }
 
-        console.log(coord.lat, coord.lon);
         cargar_clima(coord);
     };
 
     function error() {
-        alert("No pudimos obtener tu ubicación.");
+        $('#myModal').modal('show'); 
         $('#calculando').hide();
         $('#infoClima').show();
         $('#infoClima').html("<p>No pudimos obtener tu ubicación.</p>")
