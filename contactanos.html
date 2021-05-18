@@ -85,7 +85,43 @@
           Twitter: @ayudaaunpeludo<br>
           Facebook: ayudaaunpeludo
         </p>
+
+        <h4 class="sub-titulo">Deja tus datos para contactarnos contigo</h1>
+        <div class="row margenTop10">
+          <form name="formulario" method="POST">
+              <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" required name="nombre" placeholder="Ingresa tu nombre completo">
+              </div> <br>
+              <div class="form-group">
+                  <label for="edad">Edad</label>
+                  <input type="number" class="form-control" id="edad" required min="18" max="70" name="edad" placeholder="Ingresa tu edad">
+              </div> <br>
+              <div class="form-group">
+                  <label for="email">Correo Electronico</label>
+                  <input type="email" class="form-control" id="correo" required name="correo" placeholder="Ingresa tu eMail">
+              </div> <br>
+              <div class="form-group">
+                  <label for="dir">Dirección</label>
+                  <input type="text" class="form-control" id="dir" required name="dir" placeholder="Ingresa tu direccion">
+              </div> <br>
+              <div class="form-group">
+                  <label for="edad">Numero De Contacto</label>
+                  <input type="number" class="form-control" id="edad" required min="18" max="70" name="edad" placeholder="+569....">
+              </div> <br>
+              <div class="form-group">
+                  <label for="casilla"> Declaro haber llenado todas las preguntas </label>
+                  <input type="checkbox" class="form-check" id="casilla" required name="casilla" >
+              </div> <br>
+              <div>
+                  <!--<button type="button" class="btn btn-primary" onclick="validar_envio()">Enviar</button>-->
+                  <button type="submit" class="btn btn-primary" onclick="validar_envio()" >Enviar</button>
+              </div>
+          </form>
+
+        </div> <br>
       </div>
+      
 
       <!-- Pie de pagina -->
       <footer class="text-center text-lg-start fm-bg mt-auto">
