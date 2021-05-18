@@ -93,36 +93,36 @@
       <div class="container">
         <h4 class="sub-titulo">Deja tus datos para contactarnos contigo</h1>
         <div class="row margenTop10">
-          <form name="formulario" method="POST">
+          <form name="formulario" method="POST" id="formulario">
               <div class="form-group p-1">
-                  <label for="nombre">Nombre<span class="campo-op"> *</span></label>
+                  <label for="nombre">Nombre<span class="campo-ob"> *</span></label>
                   <input type="text" class="form-control" id="nombre" required name="nombre" placeholder="Ingresa tu nombre completo">
-                  <div id="nombre-vacio" class="campo-op">Debe ingresar un nombre.</div>
-                  <div id="nombre-inv" class="campo-op">El nombre solo puede tener letras.</div>
+                  <div id="nombre-vacio" class="campo-ob">Debe ingresar un nombre.</div>
+                  <div id="nombre-inv" class="campo-ob">El nombre solo puede tener letras.</div>
               </div>
               <div class="form-group p-1">
-                <label for="edad">Edad<span class="campo-op"> *</span></label>
+                <label for="edad">Edad<span class="campo-ob"> *</span></label>
                 <input type="number" class="form-control" id="edad" min="13" max="100" required name="edad" placeholder="Ingrese Edad">
-                <div id="edad-vacio" class="campo-op">Debe ingresar una edad válida.</div>
-                <div id="edad-inv" class="campo-op">La edad debe ser mayor de 13 años.</div>
+                <div id="edad-vacio" class="campo-ob">Debe ingresar una edad válida.</div>
+                <div id="edad-inv" class="campo-ob">La edad debe ser mayor de 13 años.</div>
               </div>
               <div class="form-group p-1">
-                  <label for="email">Correo electrónico<span class="campo-op"> *</span></label>
+                  <label for="email">Correo electrónico<span class="campo-ob"> *</span></label>
                   <input type="email" class="form-control" id="correo" required name="correo" placeholder="Ingresa tu e-mail">
-                  <div id="correo-vacio" class="campo-op">Debe ingresar un correo.</div>
-                  <div id="correo-inv" class="campo-op">Ingrese un correo con el formato correo@correo.x</div>
+                  <div id="correo-vacio" class="campo-ob">Debe ingresar un correo.</div>
+                  <div id="correo-inv" class="campo-ob">Ingrese un correo con el formato correo@correo.x</div>
               </div>
               <div class="form-group p-1">
-                  <label for="num">Número de contacto<span class="campo-op"> *</span></label>
+                  <label for="num">Número de contacto<span class="campo-ob"> *</span></label>
                   <input type="number" class="form-control" id="num" required name="phone" placeholder="9....">
-                  <div id="num-vacio" class="campo-op">Debe ingresar un número de contacto.</div>
-                  <div id="num-inv" class="campo-op">Ingrese un número válido. Debe incluir el 9.</div>
+                  <div id="num-vacio" class="campo-ob">Debe ingresar un número de contacto.</div>
+                  <div id="num-inv" class="campo-ob">Ingrese un número válido. Debe incluir el 9.</div>
               </div>
-              <!-- !!!!PARA LUIS!!!! Le quite la direccion, aqui habria que añadir un cuadro para el asunto igual que los de arriba -->
+              <!-- !!!!PARA LUIS!!!! Le quite la direccion. Aqui habria que añadir un cuadro para el asunto igual que los de arriba -->
               <!-- Y otro para que escriban lo que nos quieren decir, se usa <textarea class="form-control"></texarea> -->
-              <p class="campo-op">* Campos obligatorios.</p>
+              <p class="campo-ob">* Campos obligatorios.</p>
               <div>
-                  <button type="button" class="btn btn-primary secciones-h" onclick="validar_datos()" id="enviar">Enviar</button>
+                  <button type="button" class="btn btn-primary secciones-h" id="btn-submit"> Enviar</button>
               </div>
           </form>
         </div>
@@ -134,8 +134,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="myModalLabel">Envio exitoso</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title" id="myModalLabel">¡Envío exitoso!</h5>
             </div>
             <div class="modal-body">
               Hemos recibido tu mensaje, te contactaremos en breve.

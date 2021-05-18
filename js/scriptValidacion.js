@@ -7,11 +7,10 @@ $(document).ready(function () {
     $("#correo-inv").hide();
     $('#num-vacio').hide();
     $("#num-inv").hide();
-
-    $('#enviar').on('submit', function(e){
-        $('#myModal').modal('show');
-        e.preventDefault();
-    });
+    $('#btn-submit').click(function(){
+        validar_datos();
+        setTimeout(function(){ document.formulario.submit(); }, 3000);
+    }) 
 });
 
 function validar_datos(){ 
@@ -105,5 +104,4 @@ function validar_datos(){
     }
 
     $('#myModal').modal('show'); 
-    document.formulario.submit();
 }
