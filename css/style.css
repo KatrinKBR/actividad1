@@ -75,3 +75,22 @@ a:hover{
 .flotar-d {
     float:right;
 }
+
+.campo-op {
+    font-size: 12px;
+    color: rgba(255, 0, 0, 0.712);
+    margin-top: 10px;
+}
+
+/* Eliminar las flechas en el input type number para Chrome, Safari, 
+Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Eliminar las flechas en el input type number para Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
