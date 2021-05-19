@@ -7,6 +7,8 @@ $(document).ready(function () {
     $("#correo-inv").hide();
     $('#num-vacio').hide();
     $("#num-inv").hide();
+    $("#asunto-vacio").hide();
+    $("#asunto-inv").hide();
     $('#btn-submit').click(function(){
         validar_datos();
         setTimeout(function(){ document.formulario.submit(); }, 3000);
@@ -104,4 +106,24 @@ function validar_datos(){
     }
 
     $('#myModal').modal('show'); 
+
+    // Validamos el asunto: no puede estar vacio y solo letras
+    if(document.getElementById("asunto").value.length==0) {
+        $("#asunto").addClass("is-invalid");
+        $("#asunto-inv").hide();
+        $("#asunto-vacio").show();
+        document.getElementById("asunto").focus();
+        return false;
+    } else if (!document.getElementById("asunto").value.match(expLetras)) {
+        $("#asunto").addClass("is-invalid");
+        $('#asunto-vacio').hide();
+        $("#asunto-inv").show();
+        document.getElementById("asunto").focus();
+        return false;
+    } else {
+        $("#asunto").removeClass("is-invalid");
+        $("#asunto").addClass("is-valid");
+        $('#asunto-vacio').hide();
+        $("#asunto-inv").hide();
+    }
 }
