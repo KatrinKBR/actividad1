@@ -105,8 +105,6 @@ function validar_datos(){
         $("#num-inv").hide();
     }
 
-    $('#myModal').modal('show'); 
-
     // Validamos el asunto: no puede estar vacio y solo letras
     if(document.getElementById("asunto").value.length==0) {
         $("#asunto").addClass("is-invalid");
@@ -126,4 +124,6 @@ function validar_datos(){
         $('#asunto-vacio').hide();
         $("#asunto-inv").hide();
     }
+
+    $('#myModal').modal('show'); 
 }
