@@ -64,6 +64,10 @@ a:hover{
     text-decoration: underline;
 }
 
+a.btn-primary {
+    color:rgb(231, 238, 235);
+}
+
 .texto-alineado{
    text-align: justify;
 }
@@ -81,6 +85,7 @@ a:hover{
     color: rgba(255, 0, 0, 0.712);
     margin-top: 10px;
 }
+
 
 /* Eliminar las flechas en el input type number para Chrome, Safari, 
 Edge, Opera */

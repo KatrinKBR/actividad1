@@ -19,7 +19,7 @@ function validar_datos(){
     // Expresion regular para verificar que son solo numeros y que empieza por 9
     var expNumeros = /^9[0-9].*$/;
 
-    // Validamos el nombre: no puede estar vacio y solo sean letras
+    // Validamos el nombre: no puede estar vacio y que solo sean letras
     if(document.getElementById("nombre").value.length==0) {
         $("#nombre").addClass("is-invalid");
         $("#nombre-inv").hide();
