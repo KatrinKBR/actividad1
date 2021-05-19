@@ -70,7 +70,6 @@
   </nav>
   <!-- Fin Barra de Menu -->
 
-  <!-- Inicio de informacion -->
   <div class="container">
     <h1 class="titulo">Formulario de Adopción</h1>
     <div class="texto-alineado">
@@ -84,67 +83,52 @@
       </p>
     </div>
   </div>
-  <!-- Fin de informacion -->
 
-  <!-- Inicio del form -->
   <div class="container">
     <div class="row margenTop10">
       <form name="formulario" method="POST" id="formulario">
           <div class="form-group p-1 col-lg-6">
-              <label for="nombre" class="form-label">Nombre completo<span class="campo-ob"> *</span></label>
-              <input type="text" class="form-control" id="nombre" required name="nombre" placeholder="Ingrese su nombre completo">
-              <div id="nombre-vacio" class="campo-ob">Debe ingresar un nombre.</div>
-              <div id="nombre-inv" class="campo-ob">El nombre solo puede tener letras.</div>
-          </div>
-          <div class="form-group p-1 col-lg-6">
-            <label for="nombre" class="form-label">Fecha de nacimiento<span class="campo-ob"> *</span></label>
-            <input type="date" class="form-control" id="fecha" required name="fecha"/>
-            <div id="fecha-vacio" class="campo-ob">Debe seleccionar una fecha.</div>
-            <div id="fecha-inv" class="campo-ob">Debe ser mayor de 18 años.</div>
+              <label for="inputEmail4" class="form-label">Nombre Completo</label>
+              <input type="text" class="form-control" id="nombre" required name="nombre" placeholder="Ingresa tu Nombre Completo">
           </div>
 
           <div class="form-group p-1 col-lg-6">
-              <label for="direccion" class="form-label">Dirección<span class="campo-ob"> *</span></label>
-              <input type="text" class="form-control" id="direccion" required placeholder="Ejemplo: Miraflores 50">
-              <div id="direccion-vacio" class="campo-ob">Debe ingresar una direccion.</div>
+              <label for="inputAddress" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Ejemplo: Miraflores N° 50">
           </div>
           <div class="form-group p-1 col-lg-6">
-              <label for="num" class="form-label">Numeración<span class="campo-ob"> *</span></label>
-              <input type="text" class="form-control" id="num" required placeholder="Departamento, oficina o piso">
-              <div id="num-vacio" class="campo-ob">Debe ingresar una numeración.</div>
+              <label for="inputAddress2" class="form-label">Numeración</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Departamento, oficina o piso.">
           </div>
           <div class="form-group p-1 col-lg-6">
-              <label for="ciudad" class="form-label">Ciudad<span class="campo-ob"> *</span></label>
-              <input type="text" class="form-control" id="ciudad" required placeholder="Nombre de la ciudad">
-              <div id="ciudad-vacio" class="campo-ob">Debe ingresar una ciudad.</div>
-              <div id="ciudad-inv" class="campo-ob">La ciudad solo puede tener letras.</div>
+              <label for="inputCity" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="inputCity">
           </div>
           <div class="form-group p-1 col-lg-6">
-              <label for="region" class="form-label">Región<span class="campo-ob"> *</span></label>
-              <select id="region" class="form-select" required>
-                <option selected value="" disabled="disabled">Escoja una opción</option>
-                <option> I Región de Tarapacá</option>
-                <option> II Región de Antofagasta</option>
-                <option> III Región de Atacama</option>
-                <option> IV Región de Coquimbo</option>
-                <option> V Región de Valparaíso</option>
-                <option> VI Región del Libertador Bernardo O'Higgins</option>
-                <option> VII Región del Maule</option>
-                <option> VIII Región del Bío-Bío</option>
-                <option> IX Región de la Araucanía</option>
-                <option> X Región de los Lagos</option>
-                <option> XI Región de Aysén</option>
-                <option> XII Región de Magallanes y Antártica Chilena</option>
-                <option> RM Región Metropolitana</option>
-                <option> XIV Región de los Ríos</option>
-                <option> XV Arica y Parinacota</option>
-                <option> XVI Región de Ñuble</option>
+              <label for="inputState" class="form-label">Región</label>
+              <select id="inputState" class="form-select">
+              <option selected>Escoje una Opción...</option>
+              <option> XV Arica y Parinacota</option>
+              <option> I Región de Tarapacá</option>
+              <option> II Región de Antofagasta</option>
+              <option> III Región de Atacama</option>
+              <option> IV Región de Coquimbo</option>
+              <option> V Región de Valparaíso</option>
+              <option> RM Región Metropolitana</option>
+              <option> VI Región del Libertador Bernardo O'Higgins</option>
+              <option> VII Región del Maule</option>
+              <option> XVI Región de Ñuble</option>
+              <option> VII Región del Bío-Bío</option>
+              <option> IX Región de la Araucanía</option>
+              <option> XIV Región de los Ríos</option>
+              <option> X Región de los Lagos</option>
+              <option> XI Región de Aysén</option>
+              <option> XII Región de Magallanes y Antártica Chilena</option>
               </select>
-              <div id="region-vacio" class="campo-ob">Debe seleccionar una región.</div>
           </div>
           <div class="form-group p-1 col-lg-6">
-              <label for="comuna" class="form-label">Comuna<span class="campo-ob"> *</span></label>
-              <select id="comuna" class="form-select">
+              <label for="inputState" class="form-label">Comuna</label>
+              <select id="inputState" class="form-select">
               <option>...</option>
               </select>
 
@@ -155,34 +139,16 @@
           </div>
           <div class="form-group p-1 col-lg-6">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="condiciones" required>
-                <label class="form-check-label texto-checkbox" for="condiciones">
-                    Declaro que los datos ingresados son verídicos y cualquier malversación puede sancionarme como adoptante en esta fundación.
-                </label>
-                <div id="condiciones-vacio" class="campo-ob">Debe aceptar la declaración.</div>
-              </div>
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                  Declaro que los datos ingresados son verídicos y cualquier malversación puede sancionarme como adoptante en esta fundación.
+              </label>
+              </div> 
+              <button type="button" class="btn btn-primary">Enviar</button>
           </div>
-          <p class="campo-ob">* Campos obligatorios.</p> 
-          <button type="button" class="btn btn-primary secciones-h" id="btn-submit">Enviar</button>
       </form>
     </div>
   </div>
-  <!-- Fin del form -->
-
-  <!-- Inicio modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="myModalLabel">¡Envío exitoso!</h5>
-        </div>
-        <div class="modal-body">
-          Hemos recibido tu mensaje, te contactaremos en breve.
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Fin modal -->
 
   <!-- Pie de pagina -->
   <footer class="text-center text-lg-start fm-bg mt-auto">
@@ -240,6 +206,7 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/scriptValAdoptar.js"></script>
+  <script src="js/scriptValidacion.js"></script>
 </body>
 </html>
+

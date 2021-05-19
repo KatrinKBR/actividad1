@@ -86,6 +86,10 @@ a.btn-primary {
     margin-top: 10px;
 }
 
+.texto-checkbox {
+    font-size: 12px;
+}
+
 
 /* Eliminar las flechas en el input type number para Chrome, Safari, 
 Edge, Opera */

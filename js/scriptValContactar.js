@@ -9,10 +9,15 @@ $(document).ready(function () {
     $("#num-inv").hide();
     $("#asunto-vacio").hide();
     $("#asunto-inv").hide();
+    $("#mensaje-vacio").hide();
+    $("#mensaje-inv").hide();
     $('#btn-submit').click(function(){
-        validar_datos();
-        setTimeout(function(){ document.formulario.submit(); }, 3000);
-    }) 
+        if(validar_datos()) {
+            // Esto se hara asi mientras no exista un action/target real
+            // a donde se va con el submit
+            setTimeout(function(){ document.formulario.submit(); }, 3000);
+        }   
+    }); 
 });
 
 function validar_datos(){ 
@@ -20,6 +25,13 @@ function validar_datos(){
     var expLetras = /^[a-zA-Z]+$/;
     // Expresion regular para verificar que son solo numeros y que empieza por 9
     var expNumeros = /^9[0-9].*$/;
+    // Variables para determinar si la validacion fue exitos o no
+    var flagN = false;
+    var flagE = false;
+    var flagEm = false;
+    var flagNum = false;
+    var flagA = false;
+    var flag = false;
 
     // Validamos el nombre: no puede estar vacio y que solo sean letras
     if(document.getElementById("nombre").value.length==0) {
@@ -39,6 +51,7 @@ function validar_datos(){
         $("#nombre").addClass("is-valid");
         $('#nombre-vacio').hide();
         $("#nombre-inv").hide();
+        flagN = true;
     }
     
     // Validamos la edad: no puede estar vacio y mayores de 13
@@ -60,6 +73,7 @@ function validar_datos(){
         $("#edad").addClass("is-valid");
         $('#edad-vacio').hide();
         $("#edad-inv").hide();
+        flagE = true;
     }
 
     // Validamos el correo: no puede estar vacio y debe tener el formato
@@ -82,6 +96,7 @@ function validar_datos(){
         $("#correo").addClass("is-valid");
         $('#correo-vacio').hide();
         $("#correo-inv").hide();
+        flagEm = true;
     }
 
     // Validamos el numero: no puede estar vacio y deben ser 9 caracteres
@@ -103,6 +118,7 @@ function validar_datos(){
         $("#num").addClass("is-valid");
         $('#num-vacio').hide();
         $("#num-inv").hide();
+        flagNum = true;
     }
 
     // Validamos el asunto: no puede estar vacio y solo letras
@@ -123,7 +139,31 @@ function validar_datos(){
         $("#asunto").addClass("is-valid");
         $('#asunto-vacio').hide();
         $("#asunto-inv").hide();
+        flagA = true;
     }
 
-    $('#myModal').modal('show'); 
+    // Validamos el campo de texto: no puede estar vacio
+    if(document.getElementById("mensaje").value.length==0) {
+        $("#mensaje").addClass("is-invalid");
+        $("#mensaje-vacio").show();
+        document.getElementById("mensaje").focus();
+        return false;
+    } else if (!document.getElementById("mensaje").value.match(expLetras)) {
+        $("#mensaje").addClass("is-invalid");
+        $('#mensaje-vacio').hide();
+        document.getElementById("mensaje").focus();
+        return false;
+    } else {
+        $("#mensaje").removeClass("is-invalid");
+        $("#mensaje").addClass("is-valid");
+        $('#asunto-vacio').hide();
+        flagA = true;
+    }
+
+    if(flagN == true && flagE == true && flagEm == true && flagNum == true && flagA == true) {
+        flag = true;
+        $('#myModal').modal('show');
+        return flag;
+    }
+    
 }
