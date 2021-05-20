@@ -8,6 +8,7 @@ $(document).ready(function () {
     $('#ciudad-vacio').hide();
     $("#ciudad-inv").hide();
     $("#region-vacio").hide();
+    $("#comuna-vacio").hide();
     $("#condiciones-vacio").hide();
     $('#btn-submit').click(function(){
         if(validar_datos()) {
@@ -247,7 +248,6 @@ function llenarComunas() {
                 "Ñiquén", "San Fabián", "San Nicolás", "Quirihue", "Cobquecura","Coelemu","Ninhue","Portezuelo", "Ránquil","Treguaco"]
             
         },
-
             {
                 "nombreRegion": "RM Región Metropolitana",
                 "comunas": ["Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Joaquín", "San Miguel", "San Ramón", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "TilVl", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor"]
