@@ -12,7 +12,7 @@ $(document).ready(function () {
     $("#condiciones-vacio").hide();
     $('#btn-submit').click(function(){
         if(validar_datos()) {
-            setTimeout(function(){ document.formulario.submit(); }, 3000);
+            setTimeout(function(){ document.formulario.submit(); }, 8000);
         }        
     }); 
 });
@@ -21,15 +21,17 @@ function validar_datos(){
     var edadMin = 18;
     // Expresion regular para verificar que son solo letras
     var expLetras = /^[a-zA-Z" "]+$/;
+    var nombre = '';
+    var solicitud = Math.floor(Math.random() * 1000) + 1;
     // Variables para determinar si la validacion fue exitosa o no
-    var flagN = false;
-    var flagD = false;
+    var flagNom = false;
+    var flagEdad = false;
+    var flagDir = false;
     var flagNum = false;
-    var flagC = false;
-    var flagR = false;
-    var flagCom = false;
-    var flagF = false;
-    var flagCon = false;
+    var flagCiu = false;
+    var flagReg = false;
+    var flagComu = false;
+    var flagCheck = false;
     var flag = false;
 
     // Validamos el nombre: no puede estar vacio y que solo sean letras
@@ -50,7 +52,8 @@ function validar_datos(){
         $("#nombre").addClass("is-valid");
         $('#nombre-vacio').hide();
         $("#nombre-inv").hide();
-        flagN = true;
+        nombre = document.getElementById("nombre").value;
+        flagNom = true;
     }
 
     // Validamos la fecha de nacimiento: no puede estar vacia y tiene que ser alguien mayor de 18
@@ -73,7 +76,7 @@ function validar_datos(){
         $("#fecha").addClass("is-valid");
         $('#fecha-vacio').hide();
         $("#fecha-inv").hide();
-        flagF = true;
+        flagEdad = true;
     }
 
     // Validamos la direccion: no puede estar vacia
@@ -86,7 +89,7 @@ function validar_datos(){
         $("#direccion").removeClass("is-invalid");
         $("#direccion").addClass("is-valid");
         $('#direccion-vacio').hide();
-        flagD = true;
+        flagDir = true;
     }
 
     // Validamos la numeracion: no puede estar vacia
@@ -120,7 +123,7 @@ function validar_datos(){
         $("#ciudad").addClass("is-valid");
         $('#ciudad-vacio').hide();
         $("#ciudad-inv").hide();
-        flagC = true;
+        flagCiu = true;
     }
 
     // Validamos la region: debe seleccionar una opcion valida
@@ -129,7 +132,7 @@ function validar_datos(){
         $("#region").removeClass("is-invalid");
         $("#region").addClass("is-valid");
         $("#region-vacio").hide();
-        flagR = true;
+        flagReg = true;
     } else {
         $("#region").addClass("is-invalid");
         $("#region-vacio").show();
@@ -143,7 +146,7 @@ function validar_datos(){
         $("#comuna").removeClass("is-invalid");
         $("#comuna").addClass("is-valid");
         $("#comuna-vacio").hide();
-        flagCom = true;
+        flagComu = true;
     } else {
         $("#comuna").addClass("is-invalid");
         $("#comuna-vacio").show();
@@ -161,12 +164,14 @@ function validar_datos(){
         $("#condiciones").removeClass("is-invalid");
         $("#condiciones").addClass("is-valid");
         $("#condiciones-vacio").hide();
-        flagCon = true;
+        flagCheck = true;
     }
    
     // Chequeamos que se cumplan todos los requerimientos
-    if(flagN==true && flagF==true && flagD==true && flagNum==true && flagC==true && flagR==true && flagCon==true) {
+    if(flagNom==true && flagEdad==true && flagDir==true && flagNum==true && flagCiu==true 
+        && flagReg==true && flagComu==true && flagCheck==true) {
         flag = true;
+        $('#myModalBody').html("Estimado/a "+nombre+", gracias por querer adoptar. Tu solicitud con número "+solicitud+" será procesada y te contactaremos a la brevedad.")
         $('#myModal').modal('show');
         return flag;
     }
@@ -184,6 +189,7 @@ function calcularEdad() {
     return edad;
 }
 
+// Funcion que autocompleta el select de comunas en base a la region seleccionada
 function llenarComunas() {
     var region_comuna = {
         "regiones": [{
