@@ -20,14 +20,13 @@ function validar_datos(){
     var edadMin = 18;
     // Expresion regular para verificar que son solo letras
     var expLetras = /^[a-zA-Z" "]+$/;
-    // Expresion regular para verificar que son solo numeros
-    var expNumeros = /^[0-9].*$/;
     // Variables para determinar si la validacion fue exitosa o no
     var flagN = false;
     var flagD = false;
     var flagNum = false;
     var flagC = false;
     var flagR = false;
+    var flagCom = false;
     var flagF = false;
     var flagCon = false;
     var flag = false;
@@ -134,6 +133,20 @@ function validar_datos(){
         $("#region").addClass("is-invalid");
         $("#region-vacio").show();
         document.getElementById("region").focus();
+        return false;
+    }
+
+    // Validamos la comuna: debe seleccionar una opcion
+    comuna = document.getElementById('comuna'); 
+    if (comuna.value) {
+        $("#comuna").removeClass("is-invalid");
+        $("#comuna").addClass("is-valid");
+        $("#comuna-vacio").hide();
+        flagCom = true;
+    } else {
+        $("#comuna").addClass("is-invalid");
+        $("#comuna-vacio").show();
+        document.getElementById("comuna").focus();
         return false;
     }
 
