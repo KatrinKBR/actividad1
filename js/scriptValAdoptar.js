@@ -171,7 +171,8 @@ function validar_datos(){
     if(flagNom==true && flagEdad==true && flagDir==true && flagNum==true && flagCiu==true 
         && flagReg==true && flagComu==true && flagCheck==true) {
         flag = true;
-        $('#myModalBody').html("Estimado/a "+nombre+", gracias por querer adoptar. Tu solicitud con número "+solicitud+" será procesada y te contactaremos a la brevedad.")
+        $('#myModalBody').html("Estimado/a "+nombre+", gracias por querer adoptar. Tu solicitud con "
+          +"número "+solicitud+" será procesada y te contactaremos a la brevedad.")
         $('#myModal').modal('show');
         return flag;
     }
@@ -256,7 +257,7 @@ function llenarComunas() {
         },
             {
                 "nombreRegion": "RM Región Metropolitana",
-                "comunas": ["Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Joaquín", "San Miguel", "San Ramón", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "TilVl", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor"]
+                "comunas": ["Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Joaquín", "San Miguel", "San Ramón", "Santiago", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "TilVl", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor"]
         }]
     }
 
