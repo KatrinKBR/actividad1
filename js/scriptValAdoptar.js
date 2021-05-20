@@ -19,7 +19,7 @@ $(document).ready(function () {
 function validar_datos(){ 
     var edadMin = 18;
     // Expresion regular para verificar que son solo letras
-    var expLetras = /^[a-zA-Z]+$/;
+    var expLetras = /^[a-zA-Z" "]+$/;
     // Expresion regular para verificar que son solo numeros
     var expNumeros = /^[0-9].*$/;
     // Variables para determinar si la validacion fue exitosa o no
