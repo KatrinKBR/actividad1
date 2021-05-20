@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 function validar_datos(){ 
     // Expresion regular para verificar que son solo letras
-    var expLetras = /^[a-zA-Z]+$/;
+    var expLetras = /^[a-zA-Z" "]+$/;
     // Expresion regular para verificar que son solo numeros y que empieza por 9
     var expNumeros = /^9[0-9].*$/;
     // Variables para determinar si la validacion fue exitos o no
