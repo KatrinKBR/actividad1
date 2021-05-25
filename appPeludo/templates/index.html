@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="icon" type="image/x-icon" href="img/huella.png">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/huella.png' %}">
     <meta charset="utf-8">
     <title> Ayuda a un peludo </title>
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
 
   <body class="d-flex flex-column min-vh-100">
@@ -13,8 +14,8 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top fm-bg">
       <!-- Inicio Contenedor -->
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <img alt="logo" src="img/logo.png" width="45" height="45"/>
+        <a class="navbar-brand" href="/home">
+            <img alt="logo" src="{% static 'img/logo.png' %}" width="45" height="45"/>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,13 +26,13 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Inicio primer elemento -->
           <li class="nav-item">
-              <a class="nav-link active" href="index.html">Inicio</a>
+              <a class="nav-link active" href="/home">Inicio</a>
           </li>
           <!-- Fin primer elemento -->
 
           <!-- Inicio segundo elemento -->
           <li class="nav-item">
-              <a class="nav-link" href="nosotros.html">Nosotros</a>
+              <a class="nav-link" href="/nosotros">Nosotros</a>
           </li>
           <!-- Fin segundo elemento -->
 
@@ -42,9 +43,9 @@
               </a>
               <!-- Inicio submenu tercer elemento --> 
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="perros.html">Perros</a></li>
+              <li><a class="dropdown-item" href="/perros">Perros</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
+              <li><a class="dropdown-item" href="/gatos">Gatos</a></li>
               </ul>
               <!-- Fin submenu tercer elemento -->
           </li>
@@ -52,13 +53,13 @@
 
           <!-- Inicio cuarto elemento --> 
           <li class="nav-item">
-              <a class="nav-link" href="ayudanos.html">Ayúdanos</a>
+              <a class="nav-link" href="/ayudanos">Ayúdanos</a>
           </li>
           <!-- Fin cuarto elemento --> 
 
           <!-- Inicio quinto elemento --> 
           <li class="nav-item">
-              <a class="nav-link" href="contactanos.html">Contáctanos</a>
+              <a class="nav-link" href="/contactanos">Contáctanos</a>
           </li>
           <!-- Fin quinto elemento --> 
           </ul>
@@ -87,7 +88,7 @@
             <img src="https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841__340.jpg" width="200" height="200" alt="uno" class="d-block w-100" alt="Primera">
             <div class="carousel-caption d-none d-md-block">
              <h5 callas=></h5> ¡No compres uno de raza, adopta uno sin casa!</a></h5>
-              <p class="text-capitalize"><a href="#">Adoptar</a></p>
+              <p class="text-capitalize"><a href="/adopta">Adoptar</a></p>
 
             </div>
         </div>
@@ -99,8 +100,8 @@
             <img src="https://cdn.pixabay.com/photo/2015/10/12/14/57/dogs-984015__340.jpg" width="200" height="200" alt="dos" class="d-block w-100" alt="Segunda">
             <div class="carousel-caption d-none d-md-block">
               <h5>Perros</h5>
-              <p class="fw-bold"><a href="perros.html">Aquí encontrarás a nuestros canes peludos.</a></p>
-            </div><a class="gatos" href="gatos.html"></a>
+              <p class="fw-bold"><a href="/perros">Aquí encontrarás a nuestros canes peludos.</a></p>
+            </div><a class="gatos" href="/gatos"></a>
 
         </div>
         <!-- Fin diapositiva2 -->
@@ -111,7 +112,7 @@
             <img src="https://cdn.pixabay.com/photo/2018/03/29/21/51/cute-3273789__340.jpg" width="200" height="200" alt="tres" class="d-block w-100" alt="Tercera">
             <div class="carousel-caption d-none d-md-block">
               <h5>Gatos</h5>
-              <p class="fw-bold"><a href="gatos.html">Aquí encontrarás nuestros felinos peludos.</a></p>
+              <p class="fw-bold"><a href="/gatos">Aquí encontrarás nuestros felinos peludos.</a></p>
 
             </div>
         </div>
@@ -138,18 +139,18 @@
       <h2 class="text-center secciones-h">Nuestras secciones</h2>
       <div class="row">
         <div class="col-lg-4">
-          <img class="center" src="img/adoptar.png" width="200" height="200">
-          <a href="adopta.html" class="hide-under"><h5 class="text-center p-2">¡Quiero Adoptar!</h5></a>
+          <img class="center" src="{% static 'img/adoptar.png' %}" width="200" height="200">
+          <a href="/adopta" class="hide-under"><h5 class="text-center p-2">¡Quiero Adoptar!</h5></a>
           <p class="text-center">¡Dale un hogar a uno de nuestros peludos!</p>
         </div>
         <div class="col-lg-4">
-          <img class="center" src="img/comunicar.png" width="200" height="200">
-          <a href="contactanos.html" class="hide-under"> <h5 class="text-center p-2">Contáctanos</h5></a>
+          <img class="center" src="{% static 'img/comunicar.png' %}" width="200" height="200">
+          <a href="/contactanos" class="hide-under"> <h5 class="text-center p-2">Contáctanos</h5></a>
             <p class="text-center">Nuestros trabajadores con gusto resolverán tus dudas.</p>
         </div>  
         <div class="col-lg-4">
-          <img class="center" src="img/ayuda.png" width="200" height="200">
-          <a href="ayudanos.html" class="hide-under">
+          <img class="center" src="{% static 'img/ayuda.png' %}" width="200" height="200">
+          <a href="/ayudanos" class="hide-under">
             <h5 class="text-center p-2">Ayúdanos</h5></a>
             <p class="text-center">¡Ayudanos a financiar el cuidado de nuestros animales!</p>
         </div>    
@@ -166,15 +167,15 @@
           <div class="col-lg-6">
             <h5 class="text-uppercase">Ayuda a un peludo</h5>
                 <a href="#" class="hide-under p-3">
-                  <img src="img/instagram.png" width="30" height="30" />
+                  <img src="{% static 'img/instagram.png' %}" width="30" height="30" />
                 </a>
               
                 <a href="#" class="hide-under p-3">
-                  <img src="img/twitter.png" width="30" height="30" />
+                  <img src="{% static 'img/twitter.png' %}" width="30" height="30" />
                 </a>
               
                 <a href="#" class="hide-under p-3">
-                  <img src="img/facebook.png" width="30" height="30"/>
+                  <img src="{% static 'img/facebook.png' %}" width="30" height="30"/>
                 </a>
           </div>
 
@@ -212,7 +213,7 @@
     </footer>
     <!-- Fin Pie de pagina -->
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   </body>      
 </html>      
 
