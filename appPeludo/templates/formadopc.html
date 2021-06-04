@@ -1,246 +1,134 @@
+{% extends 'layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="icon" type="image/x-icon" href="{% static 'img/huella.png' %}">
-    <meta charset="utf-8">
-    <title> Ayuda a un peludo </title>
-    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
+{% block adopta_activo %}
+  active
+{% endblock adopta_activo %}
 
-  <body class="d-flex flex-column min-vh-100">
-    <!-- Barra de Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top fm-bg">
-      <!-- Inicio Contenedor -->
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/home">
-            <img alt="logo" src="{% static 'img/logo.png' %}" width="45" height="45"/>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+{% block contenido %}
+  <!-- Inicio de informacion -->
+  <div class="container">
+    <h1 class="titulo">Formulario de Adopción</h1>
+    <div class="texto-alineado">
+      <h3>Condiciones de Adopción</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+  <!-- Fin de informacion -->
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Inicio de lista de elementos -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- Inicio primer elemento -->
-          <li class="nav-item">
-              <a class="nav-link" href="/home">Inicio</a>
-          </li>
-          <!-- Fin primer elemento -->
-
-          <!-- Inicio segundo elemento -->
-          <li class="nav-item">
-              <a class="nav-link" href="/nosotros">Nosotros</a>
-          </li>
-          <!-- Fin segundo elemento -->
-
-          <!-- Inicio tercer elemento --> 
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Adopta
-              </a>
-              <!-- Inicio submenu tercer elemento --> 
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/perros">Perros</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/gatos">Gatos</a></li>
-              </ul>
-              <!-- Fin submenu tercer elemento -->
-          </li>
-          <!-- Fin tercer elemento --> 
-
-          <!-- Inicio cuarto elemento --> 
-          <li class="nav-item">
-              <a class="nav-link" href="/ayudanos">Ayúdanos</a>
-          </li>
-          <!-- Fin cuarto elemento --> 
-
-          <!-- Inicio quinto elemento --> 
-          <li class="nav-item">
-              <a class="nav-link" href="/contactanos">Contáctanos</a>
-          </li>
-          <!-- Fin quinto elemento --> 
-          </ul>
+  <!-- Inicio del form -->
+  <div class="container">
+    <div class="row margenTop10">
+      <form name="formulario" action="{% url 'guardarPostulante' %}" method="POST" id="formulario">
+        {% csrf_token %}
+        <div class="form-group p-1 col-lg-6">
+            <label for="rut" class="form-label">RUT<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="rut" name="rut" placeholder="Ejemplo: 10000000-0">
+            <div id="rut-vacio" class="campo-ob">Debe ingresar un RUT.</div>
+            <div id="rut-inv" class="campo-ob">Ingreso un RUT válido, debe ser sin puntos y con guión.</div>
         </div>
-        <!-- Fin de lista de elementos -->
-      </div>
-      <!-- Fin Contenedor -->
-    </nav>
-    <!-- Fin Barra de Menu -->
+        <div class="form-group p-1 col-lg-6">
+            <label for="nombre" class="form-label">Nombre completo<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre completo">
+            <div id="nombre-vacio" class="campo-ob">Debe ingresar un nombre.</div>
+            <div id="nombre-inv" class="campo-ob">El nombre solo puede tener letras.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+          <label for="nombre" class="form-label">Fecha de nacimiento<span class="campo-ob"> *</span></label>
+          <input type="date" class="form-control" id="fecha" name="fecha"/>
+          <div id="fecha-vacio" class="campo-ob">Debe seleccionar una fecha.</div>
+          <div id="fecha-inv" class="campo-ob">Debe ser mayor de 18 años.</div>
+        </div>
 
-    <!-- Inicio de informacion -->
-    <div class="container">
-      <h1 class="titulo">Formulario de Adopción</h1>
-      <div class="texto-alineado">
-        <h3>Condiciones de Adopción</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="direccion" class="form-label">Dirección<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ejemplo: Miraflores 50">
+            <div id="direccion-vacio" class="campo-ob">Debe ingresar una direccion.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="num" class="form-label">Numeración<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="numeracion" name="numeracion" placeholder="Departamento, oficina o piso">
+            <div id="num-vacio" class="campo-ob">Debe ingresar una numeración.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="ciudad" class="form-label">Ciudad<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Nombre de la ciudad">
+            <div id="ciudad-vacio" class="campo-ob">Debe ingresar una ciudad.</div>
+            <div id="ciudad-inv" class="campo-ob">La ciudad solo puede tener letras.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="region" class="form-label">Región<span class="campo-ob"> *</span></label>
+            <select id="region" name="region" class="form-select" onchange="llenarComunas()">
+              <option selected value="" disabled="disabled">Seleccione una región</option>
+              <option>I Región de Tarapacá</option>
+              <option>II Región de Antofagasta</option>
+              <option>III Región de Atacama</option>
+              <option>IV Región de Coquimbo</option>
+              <option>V Región de Valparaíso</option>
+              <option>VI Región del Libertador Bernardo O'Higgins</option>
+              <option>VII Región del Maule</option>
+              <option>VIII Región del Bío-Bío</option>
+              <option>IX Región de la Araucanía</option>
+              <option>X Región de los Lagos</option>
+              <option>XI Región de Aysén</option>
+              <option>XII Región de Magallanes y Antártica Chilena</option>
+              <option>RM Región Metropolitana</option>
+              <option>XIV Región de los Ríos</option>
+              <option>XV Arica y Parinacota</option>
+              <option>XVI Región de Ñuble</option>
+            </select>
+            <div id="region-vacio" class="campo-ob">Debe seleccionar una región.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="comuna" class="form-label">Comuna<span class="campo-ob"> *</span></label>
+            <select id="comuna" name="comuna" class="form-select">
+              <option selected value="" disabled="disabled">---</option>
+            </select>
+            <div id="comuna-vacio" class="campo-ob">Debe seleccionar una comuna.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="inputZip" class="form-label">Código Postal</label>
+            <input type="text" class="form-control" id="codigoPostal" name="codigoPostal">
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="condiciones">
+              <label class="form-check-label texto-checkbox" for="condiciones">
+                  Declaro que los datos ingresados son verídicos y cualquier malversación puede sancionarme como adoptante en esta fundación.
+              </label>
+              <div id="condiciones-vacio" class="campo-ob">Debe aceptar la declaración.</div>
+            </div>
+        </div>
+        <p class="campo-ob">* Campos obligatorios.</p> 
+        <button type="button" class="btn btn-primary secciones-h" id="btn-submit">Enviar</button>
+      </form>
     </div>
-    <!-- Fin de informacion -->
+  </div>
+  <!-- Fin del form -->
 
-    <!-- Inicio del form -->
-    <div class="container">
-      <div class="row margenTop10">
-        <form name="formulario" method="POST" id="formulario">
-            <div class="form-group p-1 col-lg-6">
-                <label for="nombre" class="form-label">Nombre completo<span class="campo-ob"> *</span></label>
-                <input type="text" class="form-control" id="nombre" required name="nombre" placeholder="Ingrese su nombre completo">
-                <div id="nombre-vacio" class="campo-ob">Debe ingresar un nombre.</div>
-                <div id="nombre-inv" class="campo-ob">El nombre solo puede tener letras.</div>
-            </div>
-            <div class="form-group p-1 col-lg-6">
-              <label for="nombre" class="form-label">Fecha de nacimiento<span class="campo-ob"> *</span></label>
-              <input type="date" class="form-control" id="fecha" required name="fecha"/>
-              <div id="fecha-vacio" class="campo-ob">Debe seleccionar una fecha.</div>
-              <div id="fecha-inv" class="campo-ob">Debe ser mayor de 18 años.</div>
-            </div>
-
-            <div class="form-group p-1 col-lg-6">
-                <label for="direccion" class="form-label">Dirección<span class="campo-ob"> *</span></label>
-                <input type="text" class="form-control" id="direccion" required placeholder="Ejemplo: Miraflores 50">
-                <div id="direccion-vacio" class="campo-ob">Debe ingresar una direccion.</div>
-            </div>
-            <div class="form-group p-1 col-lg-6">
-                <label for="num" class="form-label">Numeración<span class="campo-ob"> *</span></label>
-                <input type="text" class="form-control" id="num" required placeholder="Departamento, oficina o piso">
-                <div id="num-vacio" class="campo-ob">Debe ingresar una numeración.</div>
-            </div>
-            <div class="form-group p-1 col-lg-6">
-                <label for="ciudad" class="form-label">Ciudad<span class="campo-ob"> *</span></label>
-                <input type="text" class="form-control" id="ciudad" required placeholder="Nombre de la ciudad">
-                <div id="ciudad-vacio" class="campo-ob">Debe ingresar una ciudad.</div>
-                <div id="ciudad-inv" class="campo-ob">La ciudad solo puede tener letras.</div>
-            </div>
-            <div class="form-group p-1 col-lg-6">
-                <label for="region" class="form-label">Región<span class="campo-ob"> *</span></label>
-                <select id="region" class="form-select" required onchange="llenarComunas()">
-                  <option selected value="" disabled="disabled">Seleccione una región</option>
-                  <option>I Región de Tarapacá</option>
-                  <option>II Región de Antofagasta</option>
-                  <option>III Región de Atacama</option>
-                  <option>IV Región de Coquimbo</option>
-                  <option>V Región de Valparaíso</option>
-                  <option>VI Región del Libertador Bernardo O'Higgins</option>
-                  <option>VII Región del Maule</option>
-                  <option>VIII Región del Bío-Bío</option>
-                  <option>IX Región de la Araucanía</option>
-                  <option>X Región de los Lagos</option>
-                  <option>XI Región de Aysén</option>
-                  <option>XII Región de Magallanes y Antártica Chilena</option>
-                  <option>RM Región Metropolitana</option>
-                  <option>XIV Región de los Ríos</option>
-                  <option>XV Arica y Parinacota</option>
-                  <option>XVI Región de Ñuble</option>
-                </select>
-                <div id="region-vacio" class="campo-ob">Debe seleccionar una región.</div>
-            </div>
-            <div class="form-group p-1 col-lg-6">
-                <label for="comuna" class="form-label">Comuna<span class="campo-ob"> *</span></label>
-                <select id="comuna" class="form-select">
-                  <option selected value="" disabled="disabled">---</option>
-                </select>
-                <div id="comuna-vacio" class="campo-ob">Debe seleccionar una comuna.</div>
-            </div>
-            <div class="form-group p-1 col-lg-6">
-                <label for="inputZip" class="form-label">Código Postal</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="form-group p-1 col-lg-6">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="condiciones" required>
-                  <label class="form-check-label texto-checkbox" for="condiciones">
-                      Declaro que los datos ingresados son verídicos y cualquier malversación puede sancionarme como adoptante en esta fundación.
-                  </label>
-                  <div id="condiciones-vacio" class="campo-ob">Debe aceptar la declaración.</div>
-                </div>
-            </div>
-            <p class="campo-ob">* Campos obligatorios.</p> 
-            <button type="button" class="btn btn-primary secciones-h" id="btn-submit">Enviar</button>
-        </form>
-      </div>
-    </div>
-    <!-- Fin del form -->
-
-    <!-- Inicio modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="myModalLabel">¡Envío exitoso!</h5>
-          </div>
-          <div class="modal-body" id="myModalBody">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
-          </div>
+  <!-- Inicio modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">¡Envío exitoso!</h5>
+        </div>
+        <div class="modal-body" id="myModalBody">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
         </div>
       </div>
     </div>
-    <!-- Fin modal -->
+  </div>
+  <!-- Fin modal -->
+{% endblock contenido %}  
 
-    <!-- Pie de pagina -->
-    <footer class="text-center text-lg-start fm-bg mt-auto">
-      <div class="container p-2">
-        <div class="row">
-          <!-- Columna con links a RRSS -->
-          <div class="col-lg-6">
-            <h5 class="text-uppercase">Ayuda a un peludo</h5>
-                <a href="#" class="hide-under p-3">
-                  <img src="{% static 'img/instagram.png' %}" width="30" height="30" />
-                </a>
-              
-                <a href="#" class="hide-under p-3">
-                  <img src="{% static 'img/twitter.png' %}" width="30" height="30" />
-                </a>
-              
-                <a href="#" class="hide-under p-3">
-                  <img src="{% static 'img/facebook.png' %}" width="30" height="30"/>
-                </a>
-          </div>
-
-          <!-- Columna1 con links de interes -->
-          <div class="col-lg-3">
-            <h5 class="text-uppercase">Links</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!" class="text-dark">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 2</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Columna2 con links de interes -->
-          <div class="col-lg-3">
-            <h5 class="text-uppercase">Links</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!" class="text-dark">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 2</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Parte final del footer -->
-      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
-        Fundación Ayuda a un peludo © | Todos los derechos reservados.
-      </div>
-    </footer>
-    <!-- Fin Pie de pagina -->
-
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+{% block scripts %}
     <script src="{% static 'js/scriptValAdoptar.js' %}"></script>
-  </body>
-</html>
+{% endblock scripts %}    
+

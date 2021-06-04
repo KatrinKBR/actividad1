@@ -90,6 +90,10 @@ a.btn-primary {
     font-size: 12px;
 }
 
+.img-size {
+    height: 200px;
+    width: 200px;
+}
 
 /* Eliminar las flechas en el input type number para Chrome, Safari, 
 Edge, Opera */

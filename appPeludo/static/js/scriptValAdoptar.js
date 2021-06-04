@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('#rut-vacio').hide();
+    $("#rut-inv").hide();
     $('#nombre-vacio').hide();
     $("#nombre-inv").hide();
     $('#fecha-vacio').hide();
@@ -10,9 +12,10 @@ $(document).ready(function () {
     $("#region-vacio").hide();
     $("#comuna-vacio").hide();
     $("#condiciones-vacio").hide();
+
     $('#btn-submit').click(function(){
         if(validar_datos()) {
-            setTimeout(function(){ document.formulario.submit(); }, 8000);
+            document.formulario.submit();
         }        
     }); 
 });
@@ -21,9 +24,11 @@ function validar_datos(){
     var edadMin = 18;
     // Expresion regular para verificar que son solo letras
     var expLetras = /^[a-zA-Z" "]+$/;
-    var nombre = '';
+    // Expresion regular para verificar que el RUT tenga digitos, guion y dv
+    var expRut = /^[0-9]+[-|‐]{1}[0-9kK]{1}$/;
     var solicitud = Math.floor(Math.random() * 1000) + 1;
     // Variables para determinar si la validacion fue exitosa o no
+    var flagRut = false;
     var flagNom = false;
     var flagEdad = false;
     var flagDir = false;
@@ -34,25 +39,45 @@ function validar_datos(){
     var flagCheck = false;
     var flag = false;
 
+    // Validamos el RUT: Debe ser sin puntos, con guión y el DV puede ser número o k
+    if($("#rut").val().length==0) {
+        $("#rut").addClass("is-invalid");
+        $("#rut-inv").hide();
+        $("#rut-vacio").show();
+        $("#rut").focus();
+        return false;
+    } else if (!$("#rut").val().match(expRut)) {
+        $("#rut").addClass("is-invalid");
+        $('#rut-vacio').hide();
+        $("#rut-inv").show();
+        $("#rut").focus();
+        return false;
+    } else {
+        $("#rut").removeClass("is-invalid");
+        $("#rut").addClass("is-valid");
+        $('#rut-inv').hide();
+        $('#rut-vacio').hide();
+        flagRut = true;
+    }
+
     // Validamos el nombre: no puede estar vacio y que solo sean letras
-    if(document.getElementById("nombre").value.length==0) {
+    if($("#nombre").val().length==0) {
         $("#nombre").addClass("is-invalid");
         $("#nombre-inv").hide();
         $("#nombre-vacio").show();
-        document.getElementById("nombre").focus();
+        $("#nombre").focus();
         return false;
-    } else if (!document.getElementById("nombre").value.match(expLetras)) {
+    } else if (!$("#nombre").val().match(expLetras)) {
         $("#nombre").addClass("is-invalid");
         $('#nombre-vacio').hide();
         $("#nombre-inv").show();
-        document.getElementById("nombre").focus();
+        $("#nombre").focus();
         return false;
     } else {
         $("#nombre").removeClass("is-invalid");
         $("#nombre").addClass("is-valid");
         $('#nombre-vacio').hide();
         $("#nombre-inv").hide();
-        nombre = document.getElementById("nombre").value;
         flagNom = true;
     }
 
@@ -93,14 +118,14 @@ function validar_datos(){
     }
 
     // Validamos la numeracion: no puede estar vacia
-    if(document.getElementById("num").value.length==0) {
-        $("#num").addClass("is-invalid");
+    if(document.getElementById("numeracion").value.length==0) {
+        $("#numeracion").addClass("is-invalid");
         $("#num-vacio").show();
-        document.getElementById("num").focus();
+        document.getElementById("numeracion").focus();
         return false;
     } else {
-        $("#num").removeClass("is-invalid");
-        $("#num").addClass("is-valid");
+        $("#numeracion").removeClass("is-invalid");
+        $("#numeracion").addClass("is-valid");
         $('#num-vacio').hide();
         flagNum = true;
     }
@@ -172,9 +197,21 @@ function validar_datos(){
         && flagReg==true && flagComu==true && flagCheck==true) {
         flag = true;
         $('#myModalBody').html("Estimado/a "+nombre+", gracias por querer adoptar. Tu solicitud con número "+solicitud+" será procesada y te contactaremos a la brevedad.")
-        $('#myModal').modal('show');
+        //$('#myModal').modal('show');
         return flag;
     }
+}
+
+function validarRut() {
+    var rutCompleto = document.getElementById("rut").value;
+    var tmp = rutCompleto.split('-');
+	var dv = tmp[1]; 
+
+    if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto)) {
+        return false;
+    } 
+
+
 }
 
 // Funcion que calcula los años entre la fecha actual y la ingresada en el form

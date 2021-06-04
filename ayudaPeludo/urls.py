@@ -15,9 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# from appPeludo.views import home
-# from appPeludo.views import adopta
-# from appPeludo.views import ayudanos
 import appPeludo.views
 
 urlpatterns = [
@@ -37,4 +34,8 @@ urlpatterns = [
     path('nosotros/', appPeludo.views.nosotros, name='Nosotros'),
     path('perros/', appPeludo.views.perros, name='Perros'),
     path('tommy/', appPeludo.views.tommy, name='Tommy'),
+    path('crearPostulante/', appPeludo.views.crearPostulante, name='crearPostulante'),
+    path('listarPostulante/', appPeludo.views.listarPostulante, name='listarPostulante'),
+    path('guardarPostulante/', appPeludo.views.guardarPostulante, name='guardarPostulante'),
+    #path('formPostulante/', appPeludo.views.formPostulante, name='formPostulante'),
 ]

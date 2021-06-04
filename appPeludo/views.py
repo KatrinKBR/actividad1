@@ -1,4 +1,8 @@
-from django.shortcuts import render
+import datetime
+from django.http.response import HttpResponse
+from django.shortcuts import render, redirect
+from .models import Postulante
+#from appPeludo.forms import PostulanteForm
 
 # Create your views here.
 def home(request):
@@ -42,3 +46,50 @@ def perros(request):
 
 def tommy(request):
     return render(request,'tommy.html')
+
+def crearPostulante(request):
+    postulante = Postulante(
+        rut = "13123123-3",
+        nombre = "Juanito Perez",
+        fecha_nac = "1990-08-23",
+        direccion = "Las Acacias 450",
+        numeracion = "108",
+        ciudad = "Santiago",
+        region = "Region Metropolitana de Santiago",
+        comuna = "Santiago",
+        cod_postal = "7654000",
+    )
+    postulante.save()
+    return HttpResponse("Postulante agregado")
+
+def listarPostulante(request):
+    postulantes = Postulante.objects.all()
+    return render(request, 'listarPostulante.html',{'postulantes':postulantes})
+
+def guardarPostulante(request):
+    rut = request.POST['rut']
+    nombre = request.POST['nombre']
+    fecha_nac = request.POST['fecha']
+    direccion = request.POST['direccion']
+    numeracion = request.POST['numeracion']
+    ciudad = request.POST['ciudad']
+    region = request.POST['region']
+    comuna = request.POST['comuna']
+    cod_postal = request.POST['codigoPostal']
+
+    postulante = Postulante(
+        rut = rut,
+        nombre = nombre,
+        fecha_nac = fecha_nac,
+        direccion = direccion,
+        numeracion = numeracion,
+        ciudad = ciudad,
+        region = region,
+        comuna = comuna,
+        cod_postal = cod_postal
+    )
+
+    # Manejar que el rut ingresado ya existe
+    postulante.save()
+
+    return redirect('listarPostulante')

@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block contenido %}
+    <h2 class="titulo">Lista de Postulantes </h2>
+    {% for postulante in postulantes %}
+        <p>RUT: {{postulante.rut}}<br> 
+        Nombre: {{postulante.nombre}}<br> 
+        Fecha de nacimiento: {{postulante.fecha_nac}}</p>
+    {% endfor %}  
+{% endblock contenido %}
