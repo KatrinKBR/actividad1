@@ -11,3 +11,11 @@ class Postulante(models.Model):
     region = models.CharField(max_length=400)
     comuna = models.CharField(max_length=400)
     cod_postal = models.CharField(max_length=20)
+
+class Mascota(models.Model):
+    nro_chip = models.CharField(max_length=15,primary_key=True)
+    nombre = models.CharField(max_length=40)
+    genero = models.CharField(max_length=6)
+    edad = models.CharField(max_length=15)
+    especie = models.CharField(max_length=5)
+    esterilizado = models.BooleanField()

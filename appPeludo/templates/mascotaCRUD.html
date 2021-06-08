@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block contenido %}
+    <h1 class="titulo">Mantenedor de Mascotas</h1>
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                    <tr>
+                    <th scope="col">Nro Chip</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Especie</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Esterilizado</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Eliminar</th>
+                    </tr>
+            </thead>
+            {% for mascota in mascotas%}
+                <tbody>
+                    <tr>
+                    <td>{{mascota.nro_chip}}</td>
+                    <td>{{mascota.nombre}}</td>
+                    <td>{{mascota.genero}}</td>
+                    <td>{{mascota.especie}}</td>
+                    <td>{{mascota.edad}}</td>
+                    <td>{{mascota.esterilizado}}</td>
+                    <td><a class="btn btn-primary" href="{% url 'formMascotaMod' mascota.nro_chip %}">Modificar</a></td>
+                    <td><a class="btn btn-danger" href="{% url 'formMascotaDel' mascota.nro_chip %}">Eliminar</a></td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+        <a class="btn btn-primary" href="{% url 'formMascotaAgr' %}">Agregar Mascota</a>
+    </div>
+{% endblock  %}

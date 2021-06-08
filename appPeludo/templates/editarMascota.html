@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block contenido %}
+    <h1 class="titulo">Modificar Mascota</h1>
+    
+    <div class="container col-lg-4 secciones-h">
+        <form action="" method="POST" id="formulario">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+
+            <input type = "submit" class="btn btn-primary" value = "Modificar Mascota" id="modificar" />
+            <input type = "reset" class="btn btn-danger" value = "Limpiar Campos" id="limpiar" />      
+        </form>
+    </div>
+    <div class="container col-lg-4">
+        {{mensaje}}
+        <a href="{% url 'mascotaCRUD' %}">Ir al Mantenedor de Mascotas</a>
+    </div>
+    
+{% endblock  %}

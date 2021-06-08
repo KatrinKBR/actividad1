@@ -2,7 +2,8 @@ import datetime
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Postulante
-#from appPeludo.forms import PostulanteForm
+from .models import Mascota
+from appPeludo.forms import MascotaForm
 
 # Create your views here.
 def home(request):
@@ -89,7 +90,41 @@ def guardarPostulante(request):
         cod_postal = cod_postal
     )
 
-    # Manejar que el rut ingresado ya existe
+    # Manejar que el rut ingresado ya existe?
     postulante.save()
-
     return redirect('listarPostulante')
+
+def mascotaCRUD(request):
+    mascotas = Mascota.objects.all()
+    return render(request, 'mascotaCRUD.html',{'mascotas':mascotas})
+
+def formMascotaAgr(request):
+    datos = {
+        'form' : MascotaForm()
+    }
+    if request.method=='POST':
+        formulario = MascotaForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Datos Guardados Correctamente"
+
+    return render(request,'agregarMascota.html', datos)
+
+def formMascotaMod(request, nro_chip):
+    mascota = Mascota.objects.get(nro_chip=nro_chip)
+    datos = {
+        'form' : MascotaForm(instance=mascota)
+    }
+    if request.method=='POST':
+        formulario = MascotaForm(data=request.POST,instance=mascota)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Datos Modificados Correctamente"
+
+    return render(request,'editarMascota.html', datos)
+
+def formMascotaDel(request, nro_chip):
+    mascota = Mascota.objects.get(nro_chip=nro_chip)
+    mascota.delete()
+
+    return redirect('mascotaCRUD')

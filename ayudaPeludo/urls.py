@@ -37,5 +37,8 @@ urlpatterns = [
     path('crearPostulante/', appPeludo.views.crearPostulante, name='crearPostulante'),
     path('listarPostulante/', appPeludo.views.listarPostulante, name='listarPostulante'),
     path('guardarPostulante/', appPeludo.views.guardarPostulante, name='guardarPostulante'),
-    #path('formPostulante/', appPeludo.views.formPostulante, name='formPostulante'),
+    path('mascotaCRUD/', appPeludo.views.mascotaCRUD, name='mascotaCRUD'),
+    path('formMascotaAgr/', appPeludo.views.formMascotaAgr, name='formMascotaAgr'),
+    path('formMascotaMod/<str:nro_chip>/', appPeludo.views.formMascotaMod, name='formMascotaMod'),
+    path('formMascotaDel/<str:nro_chip>/', appPeludo.views.formMascotaDel, name='formMascotaDel'),
 ]

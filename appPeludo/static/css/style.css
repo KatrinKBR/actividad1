@@ -68,6 +68,10 @@ a.btn-primary {
     color:rgb(231, 238, 235);
 }
 
+a.btn-danger {
+    color:rgb(231, 238, 235);
+}
+
 .texto-alineado{
    text-align: justify;
 }
