@@ -48,25 +48,7 @@ def perros(request):
 def tommy(request):
     return render(request,'tommy.html')
 
-def crearPostulante(request):
-    postulante = Postulante(
-        rut = "13123123-3",
-        nombre = "Juanito Perez",
-        fecha_nac = "1990-08-23",
-        direccion = "Las Acacias 450",
-        numeracion = "108",
-        ciudad = "Santiago",
-        region = "Region Metropolitana de Santiago",
-        comuna = "Santiago",
-        cod_postal = "7654000",
-    )
-    postulante.save()
-    return HttpResponse("Postulante agregado")
-
-def listarPostulante(request):
-    postulantes = Postulante.objects.all()
-    return render(request, 'listarPostulante.html',{'postulantes':postulantes})
-
+# Vista para guardar un postulante en la BD de acuerdo a los datos ingresados en el form
 def guardarPostulante(request):
     rut = request.POST['rut']
     nombre = request.POST['nombre']
@@ -89,15 +71,21 @@ def guardarPostulante(request):
         comuna = comuna,
         cod_postal = cod_postal
     )
-
-    # Manejar que el rut ingresado ya existe?
+    # !!! Falta manejar que el rut ingresado ya existe!!
     postulante.save()
     return redirect('listarPostulante')
 
+# Vista para listar los postulantes que esten en la BD
+def listarPostulante(request):
+    postulantes = Postulante.objects.all()
+    return render(request, 'listarPostulante.html',{'postulantes':postulantes})
+
+# Vista para el Mantenedor, lista las mascotas en la BD
 def mascotaCRUD(request):
     mascotas = Mascota.objects.all()
     return render(request, 'mascotaCRUD.html',{'mascotas':mascotas})
 
+# Vista para agregar una Mascota
 def formMascotaAgr(request):
     datos = {
         'form' : MascotaForm()
@@ -105,24 +93,36 @@ def formMascotaAgr(request):
     if request.method=='POST':
         formulario = MascotaForm(request.POST)
         if formulario.is_valid:
-            formulario.save()
-            datos['mensaje'] = "Datos Guardados Correctamente"
+            try:
+                formulario.save()
+                datos['display'] = True
+                datos['mensaje'] = "Datos guardados correctamente."
+                datos['estilo'] = "alert-success"
+            except ValueError:
+                datos['display'] = True
+                datos['mensaje'] = "Ya existe una mascota con ese nro de chip."
+                datos['estilo'] = "alert-danger"
 
     return render(request,'agregarMascota.html', datos)
 
+# Vista para modificar una Mascota
 def formMascotaMod(request, nro_chip):
     mascota = Mascota.objects.get(nro_chip=nro_chip)
     datos = {
         'form' : MascotaForm(instance=mascota)
     }
+
     if request.method=='POST':
         formulario = MascotaForm(data=request.POST,instance=mascota)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje'] = "Datos Modificados Correctamente"
+            datos['display'] = True
+            datos['mensaje'] = "Datos modificados correctamente."
+            datos['estilo'] = "alert-success"
 
     return render(request,'editarMascota.html', datos)
 
+# Vista para eliminar una Mascota
 def formMascotaDel(request, nro_chip):
     mascota = Mascota.objects.get(nro_chip=nro_chip)
     mascota.delete()
