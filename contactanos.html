@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" type="image/x-icon" href="img/huella.png">
     <meta charset="utf-8">
     <title> Ayuda a un peludo </title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
@@ -68,6 +69,7 @@
       </nav>
       <!-- Fin Barra de Menu -->
 
+      <!-- Inicio de informacion -->
       <div class="container">
         <h1 class="titulo">CONTÁCTANOS</h1>
         <div class="texto-alineado">
@@ -77,7 +79,7 @@
               sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <h4 class="sub-titulo">Datos de contacto</h1>
+        <h4 class="sub-titulo">Datos de contacto</h4>
         <p>Teléfono: XXXXXXXXX<br>
           Whatsapp: XXXXXXXXX<br>
           Correo: adipiscing@ayudapeludos.cl <br>
@@ -86,6 +88,74 @@
           Facebook: ayudaaunpeludo
         </p>
       </div>
+      <!-- Fin de informacion -->
+
+      <!-- Inicio del formulario -->
+      <div class="container">
+        <h4 class="sub-titulo">Deja tus datos para contactarnos contigo</h1>
+        <div class="row margenTop10">
+          <form name="formulario" method="POST" id="formulario">
+              <div class="form-group p-1 col-lg-6">
+                  <label for="nombre">Nombre<span class="campo-ob"> *</span></label>
+                  <input type="text" class="form-control" id="nombre" required name="nombre" placeholder="Ingresa tu nombre completo">
+                  <div id="nombre-vacio" class="campo-ob">Debe ingresar un nombre.</div>
+                  <div id="nombre-inv" class="campo-ob">El nombre solo puede tener letras.</div>
+              </div>
+              <div class="form-group p-1 col-lg-6">
+                <label for="edad">Edad<span class="campo-ob"> *</span></label>
+                <input type="number" class="form-control" id="edad" min="13" max="100" required name="edad" placeholder="Ingrese Edad">
+                <div id="edad-vacio" class="campo-ob">Debe ingresar una edad válida.</div>
+                <div id="edad-inv" class="campo-ob">La edad debe ser mayor de 13 años.</div>
+              </div>
+              <div class="form-group p-1 col-lg-6">
+                  <label for="email">Correo electrónico<span class="campo-ob"> *</span></label>
+                  <input type="email" class="form-control" id="correo" required name="correo" placeholder="Ingresa tu e-mail">
+                  <div id="correo-vacio" class="campo-ob">Debe ingresar un correo.</div>
+                  <div id="correo-inv" class="campo-ob">Ingrese un correo con el formato correo@correo.x</div>
+              </div>
+
+              <div class="form-group p-1 col-lg-6">
+                  <label for="num">Número de contacto<span class="campo-ob"> *</span></label>
+
+                  <input type="number" class="form-control" id="num" required name="phone" placeholder="9....">
+                  <div id="num-vacio" class="campo-ob">Debe ingresar un número de contacto.</div>
+                  <div id="num-inv" class="campo-ob">Ingrese un número válido. Debe incluir el 9.</div>
+              </div>
+              <div class="from-group p-1 col-lg-6">
+                <label for="asunto">Asunto<span class="campo-ob"> *</span></label>
+                <input type="text" class="form-control" id="asunto" required name="asunto" placeholder="Ingresa el asunto para que lo contactemos">
+                <div id="asunto-vacio" class="campo-ob">Debe ingresar el asunto.</div>
+                <div id="asunto-inv" calass="campo-ob">El asunto solo puede tener letras</div>
+              </div>
+              <div class="from-group p-1 col-lg-6">
+                <label for="text">Ingresa tu mensaje<span class="campo-ob"> *</span></label> <br>
+                <textarea class="form-control" id="mensaje" placeholder="Ingresa tu consulta acá." required></textarea>
+                <div id="mensaje-vacio" class="campo-ob">Debe ingresar un mensaje.</div>
+              </div>
+              <p class="campo-ob">* Campos obligatorios.</p>
+              <button type="button" class="btn btn-primary secciones-h" id="btn-submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+      <!-- Fin del formulario -->
+
+      <!-- Inicio modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">¡Envío exitoso!</h5>
+            </div>
+            <div class="modal-body">
+              Hemos recibido tu mensaje, te contactaremos en breve.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fin modal -->
 
       <!-- Pie de pagina -->
       <footer class="text-center text-lg-start fm-bg mt-auto">
@@ -142,5 +212,7 @@
       <!-- Fin Pie de pagina -->
 
       <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.6.0.min.js"></script>
+      <script src="js/scriptValContactar.js"></script>
     </body>      
 </html>      

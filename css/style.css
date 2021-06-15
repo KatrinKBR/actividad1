@@ -47,8 +47,7 @@ body {
 .sub-titulo{
     color:black;
     text-shadow: 1px 1px #585858;
-    margin-top: 60px;
-    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 a:link{
@@ -65,6 +64,10 @@ a:hover{
     text-decoration: underline;
 }
 
+a.btn-primary {
+    color:rgb(231, 238, 235);
+}
+
 .texto-alineado{
    text-align: justify;
 }
@@ -75,4 +78,28 @@ a:hover{
 
 .flotar-d {
     float:right;
+}
+
+.campo-ob {
+    font-size: 12px;
+    color: rgba(255, 0, 0, 0.712);
+    margin-top: 10px;
+}
+
+.texto-checkbox {
+    font-size: 12px;
+}
+
+
+/* Eliminar las flechas en el input type number para Chrome, Safari, 
+Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Eliminar las flechas en el input type number para Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
