@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block adopta_activo %}
+  active
+{% endblock adopta_activo %}
+
+{% block contenido %}
+  <!-- Inicio de informacion -->
+  <div class="container">
+    <h1 class="titulo"> PERROS EN ADOPCIÓN</h1>
+    <div class="texto-alineado">
+      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam placeat, nihil explicabo eos sed inventore incidunt. Voluptatum magni pariatur necessitatibus, omnis obcaecati animi odit fugit nam aspernatur voluptatibus asperiores repellat.</p>
+    </div>
+    <h2 class="titulo">Nuestros perros que buscan familia:</h2>
+    <div class="text-center"><img src="{% static 'img/cachulo.jpg' %}" class="img-size" alt="Cachulo"></div> 
+    <div class="text-center secciones-h"><a href="/cachulo">Cachulo</a> </div>
+
+    <div class="text-center"><img src="{% static 'img/nina.jpg' %}" class="img-size" alt="Niña"></div> 
+    <div class="text-center secciones-h"><a href="/niña">Niña</a></div>
+
+    <div class="text-center"><img src="{% static 'img/flaca.jpg' %}" class="img-size" alt="Flaca"></div>
+    <div class="text-center secciones-h"><a href="/flaca">Flaca</a></div>
+  </div>
+  <!-- Fin de informacion -->
+{% endblock contenido %} 

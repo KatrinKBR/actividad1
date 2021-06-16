@@ -1,0 +1,134 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block adopta_activo %}
+  active
+{% endblock adopta_activo %}
+
+{% block contenido %}
+  <!-- Inicio de informacion -->
+  <div class="container">
+    <h1 class="titulo">Formulario de Adopción</h1>
+    <div class="texto-alineado">
+      <h3>Condiciones de Adopción</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+  <!-- Fin de informacion -->
+
+  <!-- Inicio del form -->
+  <div class="container">
+    <div class="row margenTop10">
+      <form name="formulario" action="{% url 'guardarPostulante' %}" method="POST" id="formulario">
+        {% csrf_token %}
+        <div class="form-group p-1 col-lg-6">
+            <label for="rut" class="form-label">RUT<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="rut" name="rut" placeholder="Ejemplo: 10000000-0">
+            <div id="rut-vacio" class="campo-ob">Debe ingresar un RUT.</div>
+            <div id="rut-inv" class="campo-ob">Ingreso un RUT válido, debe ser sin puntos y con guión.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="nombre" class="form-label">Nombre completo<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre completo">
+            <div id="nombre-vacio" class="campo-ob">Debe ingresar un nombre.</div>
+            <div id="nombre-inv" class="campo-ob">El nombre solo puede tener letras.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+          <label for="nombre" class="form-label">Fecha de nacimiento<span class="campo-ob"> *</span></label>
+          <input type="date" class="form-control" id="fecha" name="fecha"/>
+          <div id="fecha-vacio" class="campo-ob">Debe seleccionar una fecha.</div>
+          <div id="fecha-inv" class="campo-ob">Debe ser mayor de 18 años.</div>
+        </div>
+
+        <div class="form-group p-1 col-lg-6">
+            <label for="direccion" class="form-label">Dirección<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ejemplo: Miraflores 50">
+            <div id="direccion-vacio" class="campo-ob">Debe ingresar una direccion.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="num" class="form-label">Numeración<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="numeracion" name="numeracion" placeholder="Departamento, oficina o piso">
+            <div id="num-vacio" class="campo-ob">Debe ingresar una numeración.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="ciudad" class="form-label">Ciudad<span class="campo-ob"> *</span></label>
+            <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Nombre de la ciudad">
+            <div id="ciudad-vacio" class="campo-ob">Debe ingresar una ciudad.</div>
+            <div id="ciudad-inv" class="campo-ob">La ciudad solo puede tener letras.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="region" class="form-label">Región<span class="campo-ob"> *</span></label>
+            <select id="region" name="region" class="form-select" onchange="llenarComunas()">
+              <option selected value="" disabled="disabled">Seleccione una región</option>
+              <option>I Región de Tarapacá</option>
+              <option>II Región de Antofagasta</option>
+              <option>III Región de Atacama</option>
+              <option>IV Región de Coquimbo</option>
+              <option>V Región de Valparaíso</option>
+              <option>VI Región del Libertador Bernardo O'Higgins</option>
+              <option>VII Región del Maule</option>
+              <option>VIII Región del Bío-Bío</option>
+              <option>IX Región de la Araucanía</option>
+              <option>X Región de los Lagos</option>
+              <option>XI Región de Aysén</option>
+              <option>XII Región de Magallanes y Antártica Chilena</option>
+              <option>RM Región Metropolitana</option>
+              <option>XIV Región de los Ríos</option>
+              <option>XV Arica y Parinacota</option>
+              <option>XVI Región de Ñuble</option>
+            </select>
+            <div id="region-vacio" class="campo-ob">Debe seleccionar una región.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="comuna" class="form-label">Comuna<span class="campo-ob"> *</span></label>
+            <select id="comuna" name="comuna" class="form-select">
+              <option selected value="" disabled="disabled">---</option>
+            </select>
+            <div id="comuna-vacio" class="campo-ob">Debe seleccionar una comuna.</div>
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <label for="inputZip" class="form-label">Código Postal</label>
+            <input type="text" class="form-control" id="codigoPostal" name="codigoPostal">
+        </div>
+        <div class="form-group p-1 col-lg-6">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="condiciones">
+              <label class="form-check-label texto-checkbox" for="condiciones">
+                  Declaro que los datos ingresados son verídicos y cualquier malversación puede sancionarme como adoptante en esta fundación.
+              </label>
+              <div id="condiciones-vacio" class="campo-ob">Debe aceptar la declaración.</div>
+            </div>
+        </div>
+        <p class="campo-ob">* Campos obligatorios.</p> 
+        <button type="button" class="btn btn-primary secciones-h" id="btn-submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <!-- Fin del form -->
+
+  <!-- Inicio modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">¡Envío exitoso!</h5>
+        </div>
+        <div class="modal-body" id="myModalBody">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin modal -->
+{% endblock contenido %}  
+
+{% block scripts %}
+    <script src="{% static 'js/scriptValAdoptar.js' %}"></script>
+{% endblock scripts %}    
+

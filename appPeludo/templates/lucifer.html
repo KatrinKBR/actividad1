@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block adopta_activo %}
+  active
+{% endblock adopta_activo %}
+
+{% block contenido %}
+    <!-- Inicio de informacion -->
+    <div class="container-fluid ficha">
+        <div class="row">
+            <div class="col-sm-6">
+            <img src="{% static 'img/lucifer.jpg' %}" alt="Lucifer" class="flotar-d">
+            </div>
+            <div class="col-sm-6">
+            <p>Nombre: Lucifer</p>
+            <p>Edad: 3 años</p>
+            <p>Sexo: Macho</p>
+            <p>Esterilizado: Sí</p>
+            <p>N° Chip: 35454324345390</p>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a class="btn btn-dark" href="/formadopc" role="button">Adoptar</a>
+    </div>
+    <!-- Fin de informacion -->
+{% endblock contenido %}   

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block ayudanos_activo %}
+  active
+{% endblock ayudanos_activo %}
+
+{% block contenido %}
+  <!-- Inicio de informacion -->
+  <div class="container">
+    <h1 class="titulo">AYÚDANOS</h1>
+    <div class="texto-alineado">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <h4 class="sub-titulo">Datos bancarios</h1>
+      <p>Titular: Lorem ipsum dolor<br>
+        Cuenta Corriente: X-XXX-XX-XXXXX-X<br>
+        Banco: Consectetur <br>
+        Rut: XX.XXX.XXX-X <br>
+        Correo comprobante: adipiscing@ayudapeludos.cl
+      </p>
+  </div>
+  <!-- Fin de informacion -->
+
+  <!-- Inicio info del clima -->
+  <div class="container">
+    <h4 class="sub-titulo">¿Deseas traer donaciones al refugio?</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.</p>
+
+    <h5 class="sub-titulo">Información del clima para tu área</h5>
+    <p id="calculando">Calculando...</p>
+    <div id="infoClima">
+      <p>La temperatura para <span id="ubicacion"></span> es: <span id="temperatura"></span>º
+        <br>Tiempo: <span id="tiempo"></span>
+        <br>Humedad relativa: <span id="humedad"></span>%</p>
+    </div>
+  </div>
+  <!-- Fin info del clima -->
+{% endblock contenido %}
+
+{% block scripts %}
+  <script src="{% static 'js/scriptClima.js' %}"></script>
+{% endblock scripts %}

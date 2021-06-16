@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block adopta_activo %}
+  active
+{% endblock adopta_activo %}
+
+{% block contenido %}
+    <!-- Inicio informacion -->
+    <div class="container-fluid ficha">
+        <div class="row">
+            <div class="col-sm-6">
+            <img src="{% static 'img/tommy.jpg' %}" alt="Tommy" class="flotar-d">
+            </div>
+            <div class="col-sm-6">
+            <p>Nombre: Tommy</p>
+            <p>Edad: 1 año</p>
+            <p>Sexo: Macho</p>
+            <p>Esterilizado: Sí</p>
+            <p>N° Chip: 23340000004</p>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a class="btn btn-dark" href="/formadopc" role="button">Adoptar</a>
+    </div>
+    <!-- Fin informacion -->
+{% endblock contenido %}   
+ 
