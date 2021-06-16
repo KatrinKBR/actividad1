@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .models import Postulante
 from .models import Mascota
 from appPeludo.forms import MascotaForm
+from appPeludo.forms import MascotaFormMod
 
 # Create your views here.
 def home(request):
@@ -109,11 +110,11 @@ def formMascotaAgr(request):
 def formMascotaMod(request, nro_chip):
     mascota = Mascota.objects.get(nro_chip=nro_chip)
     datos = {
-        'form' : MascotaForm(instance=mascota)
+        'form' : MascotaFormMod(instance=mascota)
     }
 
     if request.method=='POST':
-        formulario = MascotaForm(data=request.POST,instance=mascota)
+        formulario = MascotaFormMod(data=request.POST,instance=mascota)
         if formulario.is_valid:
             formulario.save()
             datos['display'] = True
