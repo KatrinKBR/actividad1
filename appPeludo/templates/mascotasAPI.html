@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block contenido %}
+    <div class="container">
+        <h1 class="titulo">Mascotas en adopcion de Ayuda a un Peludo</h4>
+        
+        <table class="table table-bordered">
+            <thead>
+                    <tr>
+                    <th scope="col">Nro Chip</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Especie</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Esterilizado</th>
+                    </tr>
+            </thead>
+            <tbody id="divTbody">
+            </tbody>
+        </table>
+    </div>
+{% endblock contenido %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+            mostrar_mascotas();
+    });
+
+    function mostrar_mascotas() {
+        $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                url: "http://127.0.0.1:8000/api/lista_mascota", 
+                success: function (result) {
+                    var totalCount = result.length;
+                    var structureDiv = "";
+                    for (let i = 0; i < totalCount; i++) {
+                        structureDiv += "<tr>" +
+                            "               <td>" + result[i].nro_chip + "</td>" +
+                            "               <td>" + result[i].nombre + "</td>" +
+                            "               <td>" + result[i].sexo + "</td>" +
+                            "               <td>" + result[i].especie + "</td>" +
+                            "               <td>" + result[i].edad + "</td>" +
+                            "               <td>" + result[i].esterilizado + "</td>" +
+                            "           </tr>";
+                    }
+
+                    $("#divTbody").html(structureDiv); 
+                }
+            });
+    }
+</script>
+{% endblock scripts %}

@@ -49,6 +49,9 @@ def perros(request):
 def tommy(request):
     return render(request,'tommy.html')
 
+def mascotasAPI(request):
+    return render(request,'mascotasAPI.html')
+
 # Vista para guardar un postulante en la BD de acuerdo a los datos ingresados en el form
 def guardarPostulante(request):
     rut = request.POST['rut']
