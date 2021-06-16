@@ -24,24 +24,24 @@ def lista_mascota(request):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)    
 
-# @api_view(['GET','PUT','DELETE'])
-# def detalle_mascota(request,nro_chip):
-#     try:
-#         mascota = Mascota.objects.get(nro_chip=nro_chip)
-#     except Mascota.DoesNotExist:
-#         return Response(status=status.HTTP_404_NOT_FOUND)
+@api_view(['GET','PUT','DELETE'])
+def detalle_mascota(request,nro_chip):
+    try:
+        mascota = Mascota.objects.get(nro_chip=nro_chip)
+    except Mascota.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
-#     if request.method == 'GET':
-#         serializer = MascotaSerializer(mascota)
-#         return Response(serializer.data)
-#     if request.method == 'PUT':
-#         data = JSONParser().parse(request)
-#         serializer = MascotaSerializer(mascota,data=data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         else:
-#             return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-#     if request.method == 'DELETE':
-#         mascota.delete()
-#         return Response(status=status.HTTP_204_NO_CONTENT)
+    if request.method == 'GET':
+        serializer = MascotaSerializer(mascota)
+        return Response(serializer.data)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = MascotaSerializer(mascota,data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'DELETE':
+        mascota.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
