@@ -72,7 +72,6 @@ def guardarPostulante(request):
         comuna = comuna,
         cod_postal = cod_postal
     )
-    # !!! Falta manejar que el rut ingresado ya existe!!
     postulante.save()
     return redirect('listarPostulante')
 
