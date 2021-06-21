@@ -34,10 +34,10 @@
                 dataType: 'json',
                 url: "http://127.0.0.1:8000/api/lista_mascota", 
                 success: function (result) {
-                    var totalCount = result.length;
-                    var structureDiv = "";
-                    for (let i = 0; i < totalCount; i++) {
-                        structureDiv += "<tr>" +
+                    var cant_mascotas = result.length;
+                    var estructuraDiv = "";
+                    for (let i = 0; i < cant_mascotas; i++) {
+                        estructuraDiv += "<tr>" +
                             "               <td>" + result[i].nro_chip + "</td>" +
                             "               <td>" + result[i].nombre + "</td>" +
                             "               <td>" + result[i].sexo + "</td>" +
@@ -46,8 +46,7 @@
                             "               <td>" + result[i].esterilizado + "</td>" +
                             "           </tr>";
                     }
-
-                    $("#divTbody").html(structureDiv); 
+                    $("#divTbody").html(estructuraDiv); 
                 }
             });
     }
