@@ -9,14 +9,15 @@
             <div class="form-group">
                 {{ form.as_p }}
             </div>
-
-            <input type = "submit" class="btn btn-primary" value = "Modificar Mascota" id="modificar" />
-            <input type = "reset" class="btn btn-danger" value = "Limpiar Campos" id="limpiar" />      
+            <input type = "submit" class="btn btn-primary" value = "Modificar Mascota" id="modificar" />     
         </form>
     </div>
-    <div class="container col-lg-4">
-        {{mensaje}}
-        <a href="{% url 'mascotaCRUD' %}">Ir al Mantenedor de Mascotas</a>
+    <div class="container col-lg-4"> 
+         <div class="alert alert-dismissible fade show {% if display %} {{estilo}} {% else %} d-none {% endif %}" role="alert">
+            {{mensaje}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <a href="{% url 'mascotaCRUD' %}" class="">Ir al Mantenedor de Mascotas</a>
     </div>
     
 {% endblock  %}

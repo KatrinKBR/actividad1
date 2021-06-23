@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 import appPeludo.views
 
 urlpatterns = [
@@ -34,11 +35,17 @@ urlpatterns = [
     path('nosotros/', appPeludo.views.nosotros, name='Nosotros'),
     path('perros/', appPeludo.views.perros, name='Perros'),
     path('tommy/', appPeludo.views.tommy, name='Tommy'),
-    path('crearPostulante/', appPeludo.views.crearPostulante, name='crearPostulante'),
+
+    # Rutas para el manejo de los Postulantes
     path('listarPostulante/', appPeludo.views.listarPostulante, name='listarPostulante'),
     path('guardarPostulante/', appPeludo.views.guardarPostulante, name='guardarPostulante'),
+
+    # Rutas para el CRUD de Mascota
     path('mascotaCRUD/', appPeludo.views.mascotaCRUD, name='mascotaCRUD'),
     path('formMascotaAgr/', appPeludo.views.formMascotaAgr, name='formMascotaAgr'),
     path('formMascotaMod/<str:nro_chip>/', appPeludo.views.formMascotaMod, name='formMascotaMod'),
     path('formMascotaDel/<str:nro_chip>/', appPeludo.views.formMascotaDel, name='formMascotaDel'),
+
+    # Rutas API
+    path('api/',include('rest_mascota.urls')),
 ]
