@@ -32,7 +32,8 @@
         $.ajax({
                 type: 'GET',
                 dataType: 'json',
-                url: "http://127.0.0.1:8000/api/lista_mascota", 
+                url: "http://127.0.0.1:8000/api/lista_mascota",
+                headers: {"Authorization":"Token 34454c30b7007a0402418145bf4489d4783a464e"},
                 success: function (result) {
                     var cant_mascotas = result.length;
                     var estructuraDiv = "";
