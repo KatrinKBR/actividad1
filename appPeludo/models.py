@@ -15,7 +15,7 @@ class Postulante(models.Model):
 class Mascota(models.Model):
     nro_chip = models.CharField(max_length=15,primary_key=True)
     nombre = models.CharField(max_length=40)
-    genero = models.CharField(max_length=6)
+    sexo = models.CharField(max_length=6)
     edad = models.CharField(max_length=15)
     especie = models.CharField(max_length=5)
     esterilizado = models.BooleanField()
