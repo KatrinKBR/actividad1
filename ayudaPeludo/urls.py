@@ -35,6 +35,7 @@ urlpatterns = [
     path('nosotros/', appPeludo.views.nosotros, name='Nosotros'),
     path('perros/', appPeludo.views.perros, name='Perros'),
     path('tommy/', appPeludo.views.tommy, name='Tommy'),
+    path('mascotasAPI/', appPeludo.views.mascotasAPI, name='mascotasAPI'),
 
     # Rutas para el manejo de los Postulantes
     path('listarPostulante/', appPeludo.views.listarPostulante, name='listarPostulante'),
